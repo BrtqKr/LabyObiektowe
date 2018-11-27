@@ -1,5 +1,0 @@
-package agh.cs.CourtProject;
-public enum courtType
-{
- CONSTITUTIONAL_TRIBUNAL,SUPREME,NATIONAL_APPEAL_CHAMBER,COMMON,ADMINISTRATIVE
-}
