@@ -14,16 +14,12 @@ import java.util.*;
 
 public class Parser
 {
-    private LinkedList<LinkedHashMap<String, Object>> verdicts;
+    private LinkedHashMap<String,Verdict> verdicts;
     private LinkedHashMap<String, Judge> judges;
+    private String currentID;
+    private LinkedList<Judge> currentJudges;
     private List<Path>directory;
 
-    public Parser(Path dir)throws IOException,ParseException
-    {
-        parseDirectory(dir);
-        parseFiles();
-        recycle(this.verdicts);
-    }
 
     public void parseDirectory(Path dir) throws DirectoryIteratorException,IOException
     {
@@ -50,7 +46,7 @@ public class Parser
                 JSONArray verdictArray = (JSONArray) file.get("items");
                 for (Object iterator : verdictArray)
                 {
-                    verdicts.add(parseElements((JSONObject) iterator));
+                    parseElements((JSONObject) iterator);
                 }
             }
 
@@ -60,26 +56,45 @@ public class Parser
         }
 
     }
-    public LinkedHashMap<String, Object> parseElements(JSONObject item) //przechodzę po kluczach w orzeczeniu i wpisuję je do mapy
+    public void parseElements(JSONObject item) //przechodzę po kluczach w orzeczeniu i wpisuję je do mapy
     {
         LinkedHashMap<String, Object> verdict = new LinkedHashMap<>();
         for (Object iterator : item.keySet()) {
             Object current = item.get(iterator);
 
             if (current instanceof String) {
-                verdict.put(iterator.toString(), current);   //obecny element to string->wrzucam niezmieniony do mapy orzeczenia
+                if(iterator.toString().equals("id"))
+                {
+                    this.currentID=current.toString();
+                    Verdict v=new Verdict();
+                    v.updateID(currentID);
+                    verdicts.put(currentID,v);
+                }
+                else if(iterator.toString().equals("judgmentDate"))
+                {
+                    verdicts.get(currentID).updateDate(current.toString());
+                }
+                else if(iterator.toString().equals("courtType"))
+                {
+                    verdicts.get(currentID).updateCourtType(objectToType(current));
+                }
             } else if (current instanceof JSONObject)            //obecny element to obiekt->przechodzę po podobiektach i każdy rekurencyjnie wkładam do mapy
             {
-                LinkedHashMap<String, Object> subObjects;
-                subObjects = parseElements((JSONObject) current);
-                verdict.put(current.toString(), subObjects);
+                if(current.toString().equals("judges"))
+                {
+                    LinkedList<Judge>judges=new LinkedList<>();
+                }
+                for(Object i:((JSONObject) current).keySet())
+                {
+                    parseElements((JSONObject)i);
+                }
             } else {
-                verdict.put(iterator.toString(), parseArray((JSONArray) current));            //pomyśleć o dodawaniu w tym miejscu do listy sędziów
+                Object[] parsedArray=parseArray((JSONArray) current);
             }
         }
-        return verdict;
+
     }
-    public Object[] parseArray(JSONArray array) {
+    public Object[] parseArray(JSONArray array) {                   //dokończyć i poprawić parsowanie listy i obiektu
         Object[] arrayObjects = new Object[(array.size())];
         Iterator iter = array.iterator();
         int index = 0;
@@ -91,9 +106,7 @@ public class Parser
                 Object[] nextArray = parseArray((JSONArray) current);
                 arrayObjects[index++] = nextArray;
             } else {
-                LinkedHashMap<String, Object> nextObject;
-                nextObject = parseElements((JSONObject) current);
-                arrayObjects[index++] = nextObject;
+                parseElements((JSONObject) current);
             }
         }
         return arrayObjects;
@@ -107,62 +120,24 @@ public class Parser
             case "REASONS_FOR_JUDGMENT_AUTHOR":
                 return judgeRole.REASONS_FOR_JUDGMENT_AUTHOR;
             default:
-                throw new IllegalArgumentException(role + " is not a valid role");
+                throw new IllegalArgumentException(role.toString() + " is not a valid role");
         }
     }
-    public LinkedList<LinkedHashMap<String,Object>> getVerdicts()
+    public courtType objectToType(Object type)
+    {
+        switch (type.toString())
+        {
+            case "COMMON": return courtType.COMMON;
+            case "SUPREME": return courtType.SUPREME;
+            case "ADMINISTRATIVE": return courtType.ADMINISTRATIVE;
+            case "CONSTITUTIONAL_TRIBUNAL":return courtType.CONSTITUTIONAL_TRIBUNAL;
+            case "NATIONAL_APPEAL_CHAMBER":return courtType.NATIONAL_APPEAL_CHAMBER;
+            default:throw new IllegalArgumentException(type.toString()+"is not a valid court type");
+        }
+    }
+    public  LinkedHashMap<String,Verdict>getVerdicts()
     {
         return this.verdicts;
     }
-    private String currentID;
-    private int currentIndex;
-    private LinkedList<Judge> currentJudges;
-    LinkedHashMap<String,LinkedList<Judge>> result=new LinkedHashMap<>();
 
-    public void recycle(LinkedList<LinkedHashMap<String,Object>> verdicts)throws NullPointerException
-    {
-        LinkedHashMap<String,LinkedList<Judge>> result=new LinkedHashMap<>();
-        for(LinkedHashMap<String,Object> verdict:verdicts)
-        {
-            this.currentIndex=0;
-            for(Object i:verdict.keySet())
-            {
-                if(i.toString().equals("id"))
-                {
-                    this.currentID=i.toString();
-                }
-                if(i.toString().equals("judges"))
-                {
-                    this.currentJudges=new LinkedList<>();
-                    Object[] judgeObject=parseArray((JSONArray)i);
-                    for(Object j:judgeObject)
-                    {
-                        if(j.toString().equals("name"))
-                        {
-                            Judge currentJudge = new Judge(j.toString());
-                            this.currentJudges.add(currentJudge);
-                        }
-                        if(j.toString().equals("roles"))
-                        {
-                            LinkedList<judgeRole>currentRoles=new LinkedList<>();
-                            Object[] roleObject=parseArray((JSONArray) j);
-                            for(Object k:roleObject)
-                            {
-                                currentRoles.add(objectToRole(k));
-                            }
-                            this.currentJudges.get(currentIndex).addRoles(this.currentID,currentRoles);
-                            this.currentIndex++;
-                        }
-                    }
-
-                }
-            }
-            result.put(this.currentID,this.currentJudges);
-        }
-        this.result=result;
-    }
-    public LinkedHashMap getJudges()
-    {
-        return this.result;
-    }
 }

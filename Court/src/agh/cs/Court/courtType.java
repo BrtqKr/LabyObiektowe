@@ -1,4 +1,4 @@
-package agh.cs.Cour;
+package agh.cs.Court;
 
 public enum courtType
 {
