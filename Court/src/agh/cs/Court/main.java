@@ -15,10 +15,11 @@ public class main
     {
         try
         {
-            Path dir=Paths.get(URI.create("C:/Users/barte/OneDrive/Pulpit/json"));
+            Path dir=Paths.get("C:/Users/barte/OneDrive/Pulpit/json");
             Parser parse=new Parser(dir);
+
         }
-        catch (IOException| ParseException ex)
+        catch (IOException ex)
         {
             System.out.println(ex);
         }

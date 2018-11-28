@@ -12,7 +12,7 @@ public class Judge
     {
         this.name=name;
     }
-    public void addRoles(String id,LinkedList<judgeRole>newRoleList)
+    public void addRole(String id,LinkedList<judgeRole>newRoleList)
     {
         this.roles.put(id,newRoleList);
     }

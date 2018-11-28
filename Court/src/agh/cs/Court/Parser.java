@@ -18,13 +18,18 @@ public class Parser
     private LinkedHashMap<String, Judge> judges;
     private String currentID;
     private LinkedList<Judge> currentJudges;
-    private List<Path>directory;
+    private List<Path>DirectoryFiles;
+    private Path dir;
 
+    public Parser(Path dir) throws IOException
+    {
+        this.dir=dir;
+    }
 
-    public void parseDirectory(Path dir) throws DirectoryIteratorException,IOException
+    public void parseDirectory() throws DirectoryIteratorException,IOException
     {
         List<Path>result=new ArrayList<>();
-        try(DirectoryStream<Path> stream=Files.newDirectoryStream(dir,"*.{json}"))
+        try(DirectoryStream<Path> stream=Files.newDirectoryStream(this.dir,"*.{json}"))
         {
             for(Path entry: stream)
             {
@@ -34,23 +39,21 @@ public class Parser
         {
             System.out.println(ex);
         }
-        this.directory=result;
+        this.DirectoryFiles=result;
     }
     public void parseFiles() throws IOException,ParseException //wyjmuje orzeczenia z pojedynczego pliku i mieli każde po kolei parserem elementów
     {
         JSONParser parser = new JSONParser();
         try {
-            for(Path filePath:this.directory)
+            for(Path filePath:this.DirectoryFiles)
             {
-                JSONObject file = (JSONObject) parser.parse(new FileReader(filePath.toString()));
+                JSONObject file = (JSONObject) parser.parse(new FileReader(this.dir.toString()+"/"+filePath.toString()));
                 JSONArray verdictArray = (JSONArray) file.get("items");
                 for (Object iterator : verdictArray)
                 {
                     parseElements((JSONObject) iterator);
                 }
             }
-
-
         } catch (IOException | ParseException e) {
             System.out.println(e);
         }

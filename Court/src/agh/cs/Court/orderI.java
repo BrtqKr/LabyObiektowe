@@ -8,7 +8,7 @@ import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.jar.JarEntry;
 
-public class orderExecutor
+public class orderI
 {
     public void orderI(LinkedList<LinkedHashMap<String,Object>> verdicts, String id,LinkedHashMap<String,LinkedList<Judge>>judgeMap)
     {
@@ -25,40 +25,5 @@ public class orderExecutor
         }
 
     }
-    public void orderII()
-    {
 
-    }
-    public void orderIII()
-    {
-
-    }
-    public void orderIV()
-    {
-
-    }
-    public void orderV()
-    {
-
-    }
-    public void orderVI()
-    {
-
-    }
-    public void orderVII()
-    {
-
-    }
-    public void orderVIII()
-    {
-
-    }
-    public void orderIX()
-    {
-
-    }
-    public void orderX()
-    {
-
-    }
 }
