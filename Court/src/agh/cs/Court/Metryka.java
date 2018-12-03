@@ -16,6 +16,7 @@ public class Metryka
         this.courtType=courtType;
         this.judges=judges;
     }
+
     void setID(String id)
     {
         this.id=id;
@@ -28,6 +29,7 @@ public class Metryka
     {
         this.courtType=type;
     }
+
     public void printMetryka()
     {
         System.out.println("Sygnatura orzeczenia: "+this.id);

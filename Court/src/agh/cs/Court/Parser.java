@@ -84,8 +84,12 @@ public class Parser extends fromString
             Iterator<JSONObject> judgesIterator = judges.iterator();
             LinkedList<Judge> currentJudges = new LinkedList<>();
             while (judgesIterator.hasNext()) {
-                JSONObject judge = judgesIterator.next();
+                JSONObject judge = judgesIterator.next();                           //zrobić przypadek kiedy sędzia już jest w mapie sędziów
                 String fullName = judge.get("name").toString();
+                if(this.judges.get(fullName).equals(null))
+                {
+
+                }
                 Judge newJudge = new Judge(fullName);
                 currentJudges.add(newJudge);
 
@@ -133,7 +137,7 @@ public class Parser extends fromString
             String judgmentDate = item.get("judgmentDate").toString();
             Metryka m = new Metryka(id, judgmentDate, type, currentJudges);
             Verdict v = new Verdict(m, courtCases, judgmentTypeEnum, regulations);
-
+            verdicts.put(id,v);
 
 
     }

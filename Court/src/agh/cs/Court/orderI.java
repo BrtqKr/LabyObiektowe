@@ -21,7 +21,7 @@ public class orderI extends fromString
                 String typeString=verdict.get("courtType").toString();
                 courtType type=toType(typeString);
                 Metryka result=new Metryka(id,dateString,type,judgeMap.get(id));   //zakładam że po przeparsowaniu mam wszystkich sędziów w sprawie o danym id w judgemap
-                result.printMetryka();                                                     //dodać w parserze mielenie i wkładanie danych do struktur
+                result.printMetryka();
             }
         }
 
