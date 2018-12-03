@@ -8,7 +8,7 @@ import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.jar.JarEntry;
 
-public class orderI
+public class orderI extends fromString
 {
     public void orderI(LinkedList<LinkedHashMap<String,Object>> verdicts, String id,LinkedHashMap<String,LinkedList<Judge>>judgeMap)
     {
@@ -19,7 +19,8 @@ public class orderI
             {
                 String dateString=verdict.get("judgmentDate").toString();
                 String typeString=verdict.get("courtType").toString();
-                Metryka result=new Metryka(id,dateString,typeString,judgeMap.get(id));   //zakładam że po przeparsowaniu mam wszystkich sędziów w sprawie o danym id w judgemap
+                courtType type=toType(typeString);
+                Metryka result=new Metryka(id,dateString,type,judgeMap.get(id));   //zakładam że po przeparsowaniu mam wszystkich sędziów w sprawie o danym id w judgemap
                 result.printMetryka();                                                     //dodać w parserze mielenie i wkładanie danych do struktur
             }
         }
