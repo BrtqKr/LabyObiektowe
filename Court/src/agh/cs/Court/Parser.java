@@ -24,6 +24,8 @@ public class Parser extends fromString
     public Parser(Path dir) throws IOException, ParseException
     {
         this.dir=dir;
+        this.verdicts=new LinkedHashMap<>();
+        this.judges=new LinkedHashMap<>();
         parseDirectory();
         parseFiles();
     }
@@ -84,42 +86,58 @@ public class Parser extends fromString
             Iterator<JSONObject> judgesIterator = judges.iterator();
             LinkedList<Judge> currentJudges = new LinkedList<>();
             while (judgesIterator.hasNext()) {
-                JSONObject judge = judgesIterator.next();                           //zrobić przypadek kiedy sędzia już jest w mapie sędziów
+                JSONObject judge = judgesIterator.next();
                 String fullName = judge.get("name").toString();
-                if(this.judges.get(fullName).equals(null))
-                {
 
-                }
-                Judge newJudge = new Judge(fullName);
-                currentJudges.add(newJudge);
+
 
                 LinkedList<judgeRole> currentRoles = new LinkedList<>();
                 JSONArray roles = (JSONArray) judge.get("specialRoles");
-                Iterator<JSONObject> rolesIterator = roles.iterator();
+                Iterator<String> rolesIterator = roles.iterator();
                 while (rolesIterator.hasNext()) {
-                    JSONObject roleObject = rolesIterator.next();
-                    String roleString = roleObject.get("specialRoles").toString();
-                    judgeRole role;                                                                                   //sprawdzić czy puste przy wyświetlaniu
+                    String roleString = rolesIterator.next();
+                    judgeRole role;
                     role=toRole(roleString);
                     currentRoles.add(role);
                 }
-                newJudge.addRole(id, currentRoles);
+                if(this.judges.containsKey(fullName))                           //zastanowić się czy każdy sędzia w currentJudges otrzyma
+                {                                                               // te role które będą później??
+                    Judge tmp=this.judges.get(fullName);
+                    tmp.addRole(id,currentRoles);
+                    this.judges.put(fullName,tmp);
+                    currentJudges.add(tmp);
+                }
+                else
+                {
+                    Judge newJudge = new Judge(fullName);
+                    newJudge.addRole(id, currentRoles);
+                    this.judges.put(fullName,newJudge);
+                    currentJudges.add(newJudge);
+                }
+
             }
             JSONObject sourceObject = (JSONObject) item.get("source");
-            JSONObject codeObject = (JSONObject) sourceObject.get("code");
+            Object codeObject = sourceObject.get("code");
             String codeString = codeObject.toString();
             Code code;
             code=toCode(codeString);
-            String judgementUrl = sourceObject.get("judgmentUrl").toString();
-            String judgmentId = sourceObject.get("judgmentId").toString();
-            String publisher = sourceObject.get("publisher").toString();
-            String reviser = sourceObject.get("reviser").toString();
-            String publicationDate = sourceObject.get("publicationDate").toString();
+            Object judgmentUrlObject=sourceObject.get("judgmentUrl");
+            String judgementUrl =judgmentUrlObject.toString();
+            Object judgmentIdObject=sourceObject.get("judgmentId");
+            String judgmentId =judgmentIdObject.toString();
+            Object publisherObject=sourceObject.get("publisher");
+            String publisher = publisherObject.toString();                              //wywala nullpointer
+            Object reviserObject=sourceObject.get("reviser");
+            String reviser = reviserObject.toString();
+            Object publicationDateObject=sourceObject.get("publicationDate");
+            String publicationDate = publicationDateObject.toString();
 
             JSONArray courtReportersArray = (JSONArray) item.get("courtReporters");
-            Iterator<JSONObject> reportersIterator = courtReportersArray.iterator();
+            Iterator<Object> reportersIterator = courtReportersArray.iterator();
+            LinkedList<String>reporters=new LinkedList<>();
             while (reportersIterator.hasNext()) {
                 String reporter = reportersIterator.next().toString();
+                reporters.add(reporter);
             }
             JSONArray referencedRegulations = (JSONArray) item.get("referencedRegulations");
             Iterator<JSONObject> regulationsIterator = referencedRegulations.iterator();

@@ -16,7 +16,7 @@ public class main
         try
         {
             Path dir=Paths.get("C:/Users/barte/OneDrive/Pulpit/json");
-            Parser parse=new Parser(dir);
+            Parser parser=new Parser(dir);
 
         }
         catch (IOException ex)

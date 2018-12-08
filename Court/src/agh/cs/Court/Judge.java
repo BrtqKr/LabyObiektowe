@@ -11,6 +11,7 @@ public class Judge
     public Judge(String name)
     {
         this.name=name;
+        this.roles=new LinkedHashMap<>();
     }
     public void addRole(String id,LinkedList<judgeRole>newRoleList)
     {
