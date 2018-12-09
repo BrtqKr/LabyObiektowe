@@ -9,8 +9,9 @@ public class Verdict
     private LinkedList<String>caseNumbers;
     private judgmentType type;
     private LinkedList<Regulation>regulations;
+    private String textContent;
 
-    public Verdict(Metryka metryka,LinkedList<String>caseNumbers,judgmentType type,LinkedList<Regulation>regulations)
+    public Verdict(Metryka metryka,LinkedList<String>caseNumbers,judgmentType type,LinkedList<Regulation>regulations,String textContent)
     {
         this.metryka=metryka;
         this.caseNumbers=new LinkedList<>();
@@ -18,6 +19,7 @@ public class Verdict
         this.type=type;
         this.regulations=new LinkedList<>();
         this.regulations=regulations;
+        this.textContent=textContent;
     }
     void updateID(String id)
     {
@@ -38,5 +40,14 @@ public class Verdict
     void updateJudgmentType(judgmentType type)
     {
         this.type=type;
+    }
+
+    public void printTextContent()
+    {
+        System.out.println(this.textContent);
+    }
+    public Metryka getMetryka()
+    {
+        return this.metryka;
     }
 }

@@ -154,7 +154,7 @@ public class Parser extends fromString
             }
             String judgmentDate = item.get("judgmentDate").toString();
             Metryka m = new Metryka(id, judgmentDate, type, currentJudges);
-            Verdict v = new Verdict(m, courtCases, judgmentTypeEnum, regulations);
+            Verdict v = new Verdict(m, courtCases, judgmentTypeEnum, regulations);              //dodać w parserze i przy deklaracji orzeczenia textContent
             verdicts.put(id,v);
 
 

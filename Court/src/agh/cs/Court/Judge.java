@@ -7,11 +7,12 @@ public class Judge
 {
     private String name;
     private LinkedHashMap<String, LinkedList<judgeRole>> roles;                 //<ID,Role w sprawie o ID>
-
+    private LinkedList<String> cases;
     public Judge(String name)
     {
         this.name=name;
         this.roles=new LinkedHashMap<>();
+        this.cases=new LinkedList<>();
     }
     public void addRole(String id,LinkedList<judgeRole>newRoleList)
     {
@@ -30,5 +31,9 @@ public class Judge
             result.append(iterRole.toString());
         }
         return result.toString();
+    }
+    public int getCasesNumber()
+    {
+        return this.cases.size();
     }
 }
