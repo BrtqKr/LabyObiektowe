@@ -13,12 +13,12 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.*;
 
-public class Parser extends fromString
-{
+public class Parser {
     private LinkedHashMap<String,Verdict> verdicts;
     private LinkedHashMap<String, Judge> judges;
     private List<Path>DirectoryFiles;
     private Path dir;
+
 
 
     public Parser(Path dir) throws IOException, ParseException
@@ -45,7 +45,7 @@ public class Parser extends fromString
         }
         this.DirectoryFiles=result;
     }
-    public void parseFiles() throws IOException, ParseException //wyjmuje orzeczenia z pojedynczego pliku i mieli każde po kolei parserem elementów
+    public void parseFiles() throws IOException, ParseException
     {
         JSONParser parser = new JSONParser();
         try {
@@ -65,99 +65,96 @@ public class Parser extends fromString
     }
     public void parseElements(JSONObject item)
     {
-
-
-            String id = item.get("id").toString();
-            String typeString = item.get("courtType").toString();
-            courtType type;
-            type=toType(typeString);
+            Long idLong = (Long)item.get("id");
+            String id=idLong.toString();
+            String typeString = (String)item.get("CourtType");
             JSONArray jCases = (JSONArray) item.get("courtCases");
+            String caseNo;
             LinkedList<String> courtCases = new LinkedList<>();
             Iterator<JSONObject> casesIterator = jCases.iterator();
             while (casesIterator.hasNext()) {
                 JSONObject caseNum = casesIterator.next();
-                String caseNumString = caseNum.get("caseNumber").toString();
+                String caseNumString = (String)caseNum.get("caseNumber");
                 courtCases.add(caseNumString);
             }
-            String judgmentTypeString = item.get("judgmentType").toString();
-            judgmentType judgmentTypeEnum;
-            judgmentTypeEnum=toJudgmentType(judgmentTypeString);
+            caseNo=courtCases.get(0);
+            String judgmentTypeString = (String)item.get("JudgmentType");
             JSONArray judges = (JSONArray) item.get("judges");
             Iterator<JSONObject> judgesIterator = judges.iterator();
             LinkedList<Judge> currentJudges = new LinkedList<>();
             while (judgesIterator.hasNext()) {
                 JSONObject judge = judgesIterator.next();
-                String fullName = judge.get("name").toString();
-
-
-
-                LinkedList<judgeRole> currentRoles = new LinkedList<>();
+                String fullName = (String)judge.get("name");
+                LinkedList<String> currentRoles = new LinkedList<>();
                 JSONArray roles = (JSONArray) judge.get("specialRoles");
                 Iterator<String> rolesIterator = roles.iterator();
                 while (rolesIterator.hasNext()) {
                     String roleString = rolesIterator.next();
-                    judgeRole role;
-                    role=toRole(roleString);
-                    currentRoles.add(role);
+                    currentRoles.add(roleString);
                 }
                 if(this.judges.containsKey(fullName))                           //zastanowić się czy każdy sędzia w currentJudges otrzyma
                 {                                                               // te role które będą później??
                     Judge tmp=this.judges.get(fullName);
-                    tmp.addRole(id,currentRoles);
+                    tmp.addRole(courtCases.get(0),currentRoles);
                     this.judges.put(fullName,tmp);
                     currentJudges.add(tmp);
                 }
                 else
                 {
                     Judge newJudge = new Judge(fullName);
-                    newJudge.addRole(id, currentRoles);
+                    newJudge.addRole(courtCases.get(0), currentRoles);
                     this.judges.put(fullName,newJudge);
                     currentJudges.add(newJudge);
                 }
 
             }
+
             JSONObject sourceObject = (JSONObject) item.get("source");
             Object codeObject = sourceObject.get("code");
-            String codeString = codeObject.toString();
-            Code code;
-            code=toCode(codeString);
+            String codeString =(String) codeObject;
             Object judgmentUrlObject=sourceObject.get("judgmentUrl");
-            String judgementUrl =judgmentUrlObject.toString();
+            String judgementUrl =(String)judgmentUrlObject;
             Object judgmentIdObject=sourceObject.get("judgmentId");
-            String judgmentId =judgmentIdObject.toString();
+            String judgmentId =(String)judgmentIdObject;
             Object publisherObject=sourceObject.get("publisher");
-            String publisher = publisherObject.toString();                              //wywala nullpointer
+            String publisher = (String) publisherObject;                              //wywala nullpointer
             Object reviserObject=sourceObject.get("reviser");
-            String reviser = reviserObject.toString();
+            String reviser = (String) reviserObject;
             Object publicationDateObject=sourceObject.get("publicationDate");
-            String publicationDate = publicationDateObject.toString();
-
+            String publicationDate = (String)publicationDateObject;
             JSONArray courtReportersArray = (JSONArray) item.get("courtReporters");
             Iterator<Object> reportersIterator = courtReportersArray.iterator();
             LinkedList<String>reporters=new LinkedList<>();
             while (reportersIterator.hasNext()) {
-                String reporter = reportersIterator.next().toString();
+                String reporter = (String)reportersIterator.next();
                 reporters.add(reporter);
             }
+            //JSONObject textContent= (JSONObject)item.get("textContent");
+            String textContentString=(String)item.get("textContent");
             JSONArray referencedRegulations = (JSONArray) item.get("referencedRegulations");
             Iterator<JSONObject> regulationsIterator = referencedRegulations.iterator();
             LinkedList<Regulation> regulations = new LinkedList<>();
             while (regulationsIterator.hasNext()) {
                 JSONObject regulation = regulationsIterator.next();
-                String title = regulation.get("journalTitle").toString();
-                String journalNo = regulation.get("journalNo").toString();
-                String journalYear = regulation.get("journalYear").toString();
-                String journalEntry = regulation.get("journalEntry").toString();
-                String text = regulation.get("text").toString();
+                String title = (String)regulation.get("journalTitle");
+                Long journalNoLong = (Long)regulation.get("journalNo");
+                String journalNo=journalNoLong.toString();
+                Long journalYearLong = (Long)regulation.get("journalYear");
+                String journalYear=journalYearLong.toString();
+                Long journalEntryLong = (Long)regulation.get("journalEntry");
+                String journalEntry=journalEntryLong.toString();
+                String text =(String) regulation.get("text");
                 Regulation r = new Regulation(title, journalNo, journalYear, journalEntry, text);
                 regulations.add(r);
             }
-            String judgmentDate = item.get("judgmentDate").toString();
-            Metryka m = new Metryka(id, judgmentDate, type, currentJudges);
-            Verdict v = new Verdict(m, courtCases, judgmentTypeEnum, regulations);              //dodać w parserze i przy deklaracji orzeczenia textContent
-            verdicts.put(id,v);
-
-
+            String judgmentDate = (String)item.get("judgmentDate");
+            Metryka m = new Metryka(caseNo, judgmentDate, typeString, currentJudges);
+            Verdict v = new Verdict(m, courtCases, judgmentTypeString, regulations,textContentString,id,caseNo);
+            verdicts.put(caseNo,v);
+    }
+    public LinkedHashMap<String,Verdict> getVerdicts()
+    {
+        return this.verdicts;
     }
 }
 

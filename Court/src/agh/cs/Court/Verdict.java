@@ -1,17 +1,18 @@
 package agh.cs.Court;
 
 import java.util.LinkedList;
-import java.util.List;
 
 public class Verdict
 {
+    private String caseNum;
+    private String id;
     private Metryka metryka; //sygnatura, data, rodzaj sądu, skład sędziów
     private LinkedList<String>caseNumbers;
-    private judgmentType type;
+    private String type;
     private LinkedList<Regulation>regulations;
     private String textContent;
 
-    public Verdict(Metryka metryka,LinkedList<String>caseNumbers,judgmentType type,LinkedList<Regulation>regulations,String textContent)
+    public Verdict(Metryka metryka, LinkedList<String>caseNumbers, String type, LinkedList<Regulation>regulations, String textContent,String id,String caseNum)
     {
         this.metryka=metryka;
         this.caseNumbers=new LinkedList<>();
@@ -20,6 +21,8 @@ public class Verdict
         this.regulations=new LinkedList<>();
         this.regulations=regulations;
         this.textContent=textContent;
+        this.id=id;
+        this.caseNum=caseNum;
     }
     void updateID(String id)
     {
@@ -29,7 +32,7 @@ public class Verdict
     {
         this.metryka.setDate(date);
     }
-    void updateCourtType(courtType type)
+    void updateCourtType(String type)
     {
         this.metryka.setType(type);
     }
@@ -37,7 +40,7 @@ public class Verdict
     {
         this.caseNumbers=caseNumbers;
     }
-    void updateJudgmentType(judgmentType type)
+    void updateJudgmentType(String type)
     {
         this.type=type;
     }

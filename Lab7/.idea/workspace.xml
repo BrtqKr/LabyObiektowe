@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d392ebac-5a59-46a8-bd1c-70761923da11" name="Default Changelist" comment="" />
+    <list default="true" id="d392ebac-5a59-46a8-bd1c-70761923da11" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../Court/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Court/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Court/out/production/Court/agh/cs/Court/Judge.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Court/out/production/Court/agh/cs/Court/Judge.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Court/out/production/Court/agh/cs/Court/Parser.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Court/out/production/Court/agh/cs/Court/Parser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Court/out/production/Court/agh/cs/Court/Verdict.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Court/out/production/Court/agh/cs/Court/Verdict.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Court/out/production/Court/agh/cs/Court/orderI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Court/src/agh/cs/Court/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Court/src/agh/cs/Court/Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -82,6 +90,15 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-1141832297">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FavoritesManager">
     <favorites_list name="Lab6" />
@@ -140,6 +157,9 @@
       <find>can</find>
     </findStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -195,6 +215,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -238,7 +259,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -248,7 +268,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542809827753" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544434506850" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -267,7 +287,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.CarSystem (2)">
+  <component name="RunManager" selected="JUnit.All in Lab6">
     <configuration name="CarSystem (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="agh.cs.lab6.CarSystem" />
       <module name="Lab6" />
@@ -323,8 +343,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.CarSystem (2)" />
         <item itemvalue="JUnit.All in Lab6" />
+        <item itemvalue="Application.CarSystem (2)" />
         <item itemvalue="Application.CarSystem (1)" />
         <item itemvalue="Application.CarSystem" />
       </list>
@@ -361,6 +381,7 @@
       <workItem from="1543090116343" duration="649000" />
       <workItem from="1543094513741" duration="273000" />
       <workItem from="1543097422905" duration="1388000" />
+      <workItem from="1544431478898" duration="930000" />
     </task>
     <servers />
   </component>
@@ -377,15 +398,18 @@
     <history-entry file="All_in_Lab6 - 2018.11.21 at 15h 16m 31s.xml">
       <configuration name="All in Lab6" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="All_in_Lab6 - 2018.12.10 at 09h 49m 57s.xml">
+      <configuration name="All in Lab6" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40186000" />
+    <option name="totallyTimeSpent" value="41116000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21610738" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21879195" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -551,6 +575,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../CourtTestv/src/agh/cs/CourtProject/jsonParser.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/agh/cs/lab7/AbstractWorldMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="43" column="20" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/agh/cs/lab7/UnboundedMapv2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="952">
+          <caret line="65" selection-start-line="65" selection-end-line="65" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/agh/cs/lab7/CarSystem.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -562,23 +601,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/agh/cs/lab7/UnboundedMapv2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
-          <caret line="65" selection-start-line="65" selection-end-line="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../CourtTestv/src/agh/cs/CourtProject/jsonParser.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/agh/cs/lab7/AbstractWorldMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="43" column="20" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="20" />
         </state>
       </provider>
     </entry>

@@ -6,7 +6,7 @@ import java.lang.*;
 public class Judge
 {
     private String name;
-    private LinkedHashMap<String, LinkedList<judgeRole>> roles;                 //<ID,Role w sprawie o ID>
+    private LinkedHashMap<String, LinkedList<String>> roles;                 //<ID,Role w sprawie o ID>
     private LinkedList<String> cases;
     public Judge(String name)
     {
@@ -14,7 +14,7 @@ public class Judge
         this.roles=new LinkedHashMap<>();
         this.cases=new LinkedList<>();
     }
-    public void addRole(String id,LinkedList<judgeRole>newRoleList)
+    public void addRole(String id,LinkedList<String>newRoleList)
     {
         this.roles.put(id,newRoleList);
     }
@@ -24,11 +24,11 @@ public class Judge
     }
     public String getRoles(String id)
     {
-        LinkedList<judgeRole>currentRoles=this.roles.get(id);
+        LinkedList<String>currentRoles=this.roles.get(id);
         StringBuilder result=new StringBuilder();
-        for(judgeRole iterRole:currentRoles)
+        for(String role:currentRoles)
         {
-            result.append(iterRole.toString());
+            result.append(role.toString());
         }
         return result.toString();
     }

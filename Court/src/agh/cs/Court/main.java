@@ -17,9 +17,11 @@ public class main
         {
             Path dir=Paths.get("C:/Users/barte/OneDrive/Pulpit/json");
             Parser parser=new Parser(dir);
-
+            LinkedHashMap<String,Verdict> verdicts=parser.getVerdicts();
+            orderII o=new orderII(verdicts);
+            o.execute("II AKa 105/11");
         }
-        catch (IOException ex)
+        catch (IOException | IllegalArgumentException ex)
         {
             System.out.println(ex);
         }
