@@ -1,4 +1,4 @@
-package agh.cs.Court;
+package agh.cs.Court.structures;
 
 public class regulation
 {

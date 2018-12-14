@@ -1,4 +1,7 @@
-package agh.cs.Court;
+package agh.cs.Court.structures;
+
+import agh.cs.Court.structures.regulation;
+import agh.cs.Court.structures.rubrum;
 
 import java.util.LinkedList;
 
@@ -6,7 +9,7 @@ public class verdict
 {
     private String caseNum;
     private String id;
-    private rubrum rubrum; //sygnatura, data, rodzaj sądu, skład sędziów
+    private agh.cs.Court.structures.rubrum rubrum; //sygnatura, data, rodzaj sądu, skład sędziów
     private LinkedList<String>caseNumbers;
     private String type;
     private LinkedList<regulation>regulations;

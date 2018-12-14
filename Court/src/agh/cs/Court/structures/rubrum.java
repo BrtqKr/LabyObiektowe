@@ -1,4 +1,6 @@
-package agh.cs.Court;
+package agh.cs.Court.structures;
+
+import agh.cs.Court.structures.judge;
 
 import java.util.LinkedList;
 

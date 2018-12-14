@@ -1,5 +1,9 @@
 package agh.cs.Court;
 
+import agh.cs.Court.structures.judge;
+import agh.cs.Court.structures.regulation;
+import agh.cs.Court.structures.rubrum;
+import agh.cs.Court.structures.verdict;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -94,14 +98,14 @@ public class parser {
                 }
                 if(this.judges.containsKey(fullName))                           //zastanowić się czy każdy sędzia w currentJudges otrzyma
                 {                                                               // te role które będą później??
-                    agh.cs.Court.judge tmp=this.judges.get(fullName);
+                    agh.cs.Court.structures.judge tmp=this.judges.get(fullName);
                     tmp.addRole(courtCases.get(0),currentRoles);
                     this.judges.put(fullName,tmp);
                     currentJudges.add(tmp);
                 }
                 else
                 {
-                    agh.cs.Court.judge newJudge = new judge(fullName);
+                    agh.cs.Court.structures.judge newJudge = new judge(fullName);
                     newJudge.addRole(courtCases.get(0), currentRoles);
                     this.judges.put(fullName,newJudge);
                     currentJudges.add(newJudge);
@@ -144,7 +148,7 @@ public class parser {
                 Long journalEntryLong = (Long)regulation.get("journalEntry");
                 String journalEntry=journalEntryLong.toString();
                 String text =(String) regulation.get("text");
-                agh.cs.Court.regulation r = new regulation(title, journalNo, journalYear, journalEntry, text);
+                agh.cs.Court.structures.regulation r = new regulation(title, journalNo, journalYear, journalEntry, text);
                 regulations.add(r);
             }
             String judgmentDate = (String)item.get("judgmentDate");
@@ -155,6 +159,10 @@ public class parser {
     public LinkedHashMap<String, verdict> getVerdicts()
     {
         return this.verdicts;
+    }
+    public LinkedHashMap<String, judge> getJudges()
+    {
+        return this.judges;
     }
 }
 

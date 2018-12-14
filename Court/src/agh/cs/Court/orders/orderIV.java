@@ -1,16 +1,14 @@
-package agh.cs.Court;
+package agh.cs.Court.orders;
 
-import java.util.ArrayList;
+import agh.cs.Court.structures.judge;
+
 import java.util.LinkedHashMap;
 
 public class orderIV
 {
-    public orderIV(ArrayList<String>Signatures, LinkedHashMap<String, verdict> verdicts)
+    public orderIV(LinkedHashMap<String, judge > judges, String name)
     {
-        for(int i=0;i<Signatures.size();i++)
-        {
-            verdict tmp=verdicts.get(Signatures.get(i));
-            tmp.getRubrum().printMetryka();
-        }
+            judge tmp=judges.get(name);
+            System.out.println(tmp.getCasesNumber());
     }
 }

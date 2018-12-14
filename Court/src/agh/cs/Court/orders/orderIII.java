@@ -1,6 +1,8 @@
-package agh.cs.Court;
+package agh.cs.Court.orders;
 
 import java.util.LinkedHashMap;
+
+import agh.cs.Court.structures.verdict;
 import org.jsoup.*;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;

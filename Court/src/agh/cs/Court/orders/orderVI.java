@@ -1,12 +1,14 @@
-package agh.cs.Court;
+package agh.cs.Court.orders;
 
-import java.security.Signature;
-import java.util.ArrayList;
+import agh.cs.Court.structures.judge;
+
+import java.util.LinkedHashMap;
 
 public class orderVI
 {
-    public orderVI()
+    public orderVI(LinkedHashMap<String, judge> judges,String judgeName)  //wyświetla liczbę orzeczeń wybranego sędziego
     {
-
+        judge j=judges.get(judgeName);
+        System.out.println("Sędzia "+judgeName+", liczba orzeczeń: "+j.getCasesNumber());
     }
 }

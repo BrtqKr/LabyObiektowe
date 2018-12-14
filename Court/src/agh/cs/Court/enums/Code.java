@@ -1,4 +1,4 @@
-package agh.cs.Court;
+package agh.cs.Court.enums;
 
 public enum Code {
     COMMON_COURT,SUPREME_COURT,CONSTITUTIONAL_TRIBUNAL,NATIONAL_APPEAL_CHAMBER;

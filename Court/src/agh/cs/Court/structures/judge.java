@@ -1,4 +1,4 @@
-package agh.cs.Court;
+package agh.cs.Court.structures;
 
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
