@@ -4,9 +4,9 @@ import java.util.LinkedHashMap;
 
 public class orderV
 {
-    public orderV(LinkedHashMap<String, Judge> judges,String name)
+    public orderV(LinkedHashMap<String, judge> judges, String name)
     {
-        Judge tmp=judges.get(name);
+        judge tmp=judges.get(name);
         System.out.println(tmp.getCasesNumber());
     }
 }

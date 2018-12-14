@@ -3,12 +3,12 @@ package agh.cs.Court;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.lang.*;
-public class Judge
+public class judge
 {
     private String name;
     private LinkedHashMap<String, LinkedList<String>> roles;                 //<ID,Role w sprawie o ID>
     private LinkedList<String> cases;
-    public Judge(String name)
+    public judge(String name)
     {
         this.name=name;
         this.roles=new LinkedHashMap<>();

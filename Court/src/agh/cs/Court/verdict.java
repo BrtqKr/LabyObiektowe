@@ -2,19 +2,19 @@ package agh.cs.Court;
 
 import java.util.LinkedList;
 
-public class Verdict
+public class verdict
 {
     private String caseNum;
     private String id;
-    private Metryka metryka; //sygnatura, data, rodzaj sądu, skład sędziów
+    private rubrum rubrum; //sygnatura, data, rodzaj sądu, skład sędziów
     private LinkedList<String>caseNumbers;
     private String type;
-    private LinkedList<Regulation>regulations;
+    private LinkedList<regulation>regulations;
     private String textContent;
 
-    public Verdict(Metryka metryka, LinkedList<String>caseNumbers, String type, LinkedList<Regulation>regulations, String textContent,String id,String caseNum)
+    public verdict(rubrum rubrum, LinkedList<String>caseNumbers, String type, LinkedList<regulation>regulations, String textContent, String id, String caseNum)
     {
-        this.metryka=metryka;
+        this.rubrum = rubrum;
         this.caseNumbers=new LinkedList<>();
         this.caseNumbers=caseNumbers;                                   //zapisać wszystko w zmiennych w parserze i zainicjalizować verdict za 1 razem
         this.type=type;
@@ -26,15 +26,15 @@ public class Verdict
     }
     void updateID(String id)
     {
-        this.metryka.setID(id);
+        this.rubrum.setID(id);
     }
     void updateDate(String date)
     {
-        this.metryka.setDate(date);
+        this.rubrum.setDate(date);
     }
     void updateCourtType(String type)
     {
-        this.metryka.setType(type);
+        this.rubrum.setType(type);
     }
     void updateCaseNumbers(LinkedList<String>caseNumbers)
     {
@@ -45,12 +45,12 @@ public class Verdict
         this.type=type;
     }
 
-    public void printTextContent()
+    public String getTextContent()
     {
-        System.out.println(this.textContent);
+        return this.textContent;
     }
-    public Metryka getMetryka()
+    public rubrum getRubrum()
     {
-        return this.metryka;
+        return this.rubrum;
     }
 }

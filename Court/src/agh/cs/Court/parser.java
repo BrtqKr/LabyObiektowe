@@ -13,15 +13,15 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.*;
 
-public class Parser {
-    private LinkedHashMap<String,Verdict> verdicts;
-    private LinkedHashMap<String, Judge> judges;
+public class parser {
+    private LinkedHashMap<String, verdict> verdicts;
+    private LinkedHashMap<String, judge> judges;
     private List<Path>DirectoryFiles;
     private Path dir;
 
 
 
-    public Parser(Path dir) throws IOException, ParseException
+    public parser(Path dir) throws IOException, ParseException
     {
         this.dir=dir;
         this.verdicts=new LinkedHashMap<>();
@@ -67,7 +67,7 @@ public class Parser {
     {
             Long idLong = (Long)item.get("id");
             String id=idLong.toString();
-            String typeString = (String)item.get("CourtType");
+            String typeString = (String)item.get("courtType");
             JSONArray jCases = (JSONArray) item.get("courtCases");
             String caseNo;
             LinkedList<String> courtCases = new LinkedList<>();
@@ -81,7 +81,7 @@ public class Parser {
             String judgmentTypeString = (String)item.get("JudgmentType");
             JSONArray judges = (JSONArray) item.get("judges");
             Iterator<JSONObject> judgesIterator = judges.iterator();
-            LinkedList<Judge> currentJudges = new LinkedList<>();
+            LinkedList<judge> currentJudges = new LinkedList<>();
             while (judgesIterator.hasNext()) {
                 JSONObject judge = judgesIterator.next();
                 String fullName = (String)judge.get("name");
@@ -94,14 +94,14 @@ public class Parser {
                 }
                 if(this.judges.containsKey(fullName))                           //zastanowić się czy każdy sędzia w currentJudges otrzyma
                 {                                                               // te role które będą później??
-                    Judge tmp=this.judges.get(fullName);
+                    agh.cs.Court.judge tmp=this.judges.get(fullName);
                     tmp.addRole(courtCases.get(0),currentRoles);
                     this.judges.put(fullName,tmp);
                     currentJudges.add(tmp);
                 }
                 else
                 {
-                    Judge newJudge = new Judge(fullName);
+                    agh.cs.Court.judge newJudge = new judge(fullName);
                     newJudge.addRole(courtCases.get(0), currentRoles);
                     this.judges.put(fullName,newJudge);
                     currentJudges.add(newJudge);
@@ -133,7 +133,7 @@ public class Parser {
             String textContentString=(String)item.get("textContent");
             JSONArray referencedRegulations = (JSONArray) item.get("referencedRegulations");
             Iterator<JSONObject> regulationsIterator = referencedRegulations.iterator();
-            LinkedList<Regulation> regulations = new LinkedList<>();
+            LinkedList<regulation> regulations = new LinkedList<>();
             while (regulationsIterator.hasNext()) {
                 JSONObject regulation = regulationsIterator.next();
                 String title = (String)regulation.get("journalTitle");
@@ -144,15 +144,15 @@ public class Parser {
                 Long journalEntryLong = (Long)regulation.get("journalEntry");
                 String journalEntry=journalEntryLong.toString();
                 String text =(String) regulation.get("text");
-                Regulation r = new Regulation(title, journalNo, journalYear, journalEntry, text);
+                agh.cs.Court.regulation r = new regulation(title, journalNo, journalYear, journalEntry, text);
                 regulations.add(r);
             }
             String judgmentDate = (String)item.get("judgmentDate");
-            Metryka m = new Metryka(caseNo, judgmentDate, typeString, currentJudges);
-            Verdict v = new Verdict(m, courtCases, judgmentTypeString, regulations,textContentString,id,caseNo);
+            rubrum m = new rubrum(caseNo, judgmentDate, typeString, currentJudges);
+            verdict v = new verdict(m, courtCases, judgmentTypeString, regulations,textContentString,id,caseNo);
             verdicts.put(caseNo,v);
     }
-    public LinkedHashMap<String,Verdict> getVerdicts()
+    public LinkedHashMap<String, verdict> getVerdicts()
     {
         return this.verdicts;
     }

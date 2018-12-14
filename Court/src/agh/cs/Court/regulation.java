@@ -1,6 +1,6 @@
 package agh.cs.Court;
 
-public class Regulation
+public class regulation
 {
     private String journalTitle;
     private String journalNo;
@@ -8,7 +8,7 @@ public class Regulation
     private String journalEntry;
     private String text;
 
-    public Regulation(String title,String num,String year,String entry,String text)
+    public regulation(String title, String num, String year, String entry, String text)
     {
         this.journalTitle=title;
         this.journalNo=num;
