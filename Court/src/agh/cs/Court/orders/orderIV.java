@@ -9,6 +9,6 @@ public class orderIV
     public orderIV(LinkedHashMap<String, judge > judges, String name)
     {
             judge tmp=judges.get(name);
-            System.out.println(tmp.getCasesNumber());
+            System.out.println(name+", liczba orzeczeń: "+tmp.getCasesNumber());
     }
 }

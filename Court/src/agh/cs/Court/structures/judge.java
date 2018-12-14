@@ -18,6 +18,7 @@ public class judge
     {
         this.roles.put(id,newRoleList);
     }
+    public void addCase(String caseNum){this.cases.add(caseNum);}
     public String getName()
     {
         return this.name;

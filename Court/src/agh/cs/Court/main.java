@@ -1,5 +1,7 @@
 package agh.cs.Court;
 
+import agh.cs.Court.orders.orderII;
+import agh.cs.Court.orders.orderIII;
 import agh.cs.Court.orders.orderIV;
 import agh.cs.Court.structures.judge;
 import agh.cs.Court.structures.verdict;
@@ -21,12 +23,12 @@ public class main
             LinkedHashMap<String, verdict> verdicts=parser.getVerdicts();
             LinkedHashMap<String, judge>judges =parser.getJudges();
 
-            //orderII o2=new orderII(verdicts);
-            //o2.execute("II AKa 105/11");
+            orderII o2=new orderII(verdicts);
+            o2.execute("II AKa 105/11");
 
-            //orderIII o3=new orderIII(verdicts,"II AKa 105/11");
+            orderIII o3=new orderIII(verdicts,"II AKa 105/11");
 
-            orderIV o4=new orderIV(judges,"Edward Stelmasik");
+            orderIV o4=new orderIV(judges,"Andrzej Rzepliński");
         }
         catch (IOException | IllegalArgumentException ex)
         {

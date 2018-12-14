@@ -100,13 +100,15 @@ public class parser {
                 {                                                               // te role które będą później??
                     agh.cs.Court.structures.judge tmp=this.judges.get(fullName);
                     tmp.addRole(courtCases.get(0),currentRoles);
-                    this.judges.put(fullName,tmp);
+                    tmp.addCase(caseNo);
+                    this.judges.replace(fullName,tmp);
                     currentJudges.add(tmp);
                 }
                 else
                 {
                     agh.cs.Court.structures.judge newJudge = new judge(fullName);
                     newJudge.addRole(courtCases.get(0), currentRoles);
+                    newJudge.addCase(caseNo);
                     this.judges.put(fullName,newJudge);
                     currentJudges.add(newJudge);
                 }
@@ -121,7 +123,7 @@ public class parser {
             Object judgmentIdObject=sourceObject.get("judgmentId");
             String judgmentId =(String)judgmentIdObject;
             Object publisherObject=sourceObject.get("publisher");
-            String publisher = (String) publisherObject;                              //wywala nullpointer
+            String publisher = (String) publisherObject;
             Object reviserObject=sourceObject.get("reviser");
             String reviser = (String) reviserObject;
             Object publicationDateObject=sourceObject.get("publicationDate");
