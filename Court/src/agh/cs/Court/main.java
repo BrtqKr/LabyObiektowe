@@ -5,10 +5,12 @@ import agh.cs.Court.structures.judge;
 import agh.cs.Court.structures.verdict;
 import org.json.simple.parser.ParseException;
 
+import java.io.Console;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.LinkedHashMap;
+import java.util.Scanner;
 
 public class main
 {
@@ -16,7 +18,7 @@ public class main
     {
         try
         {
-            Path dir=Paths.get("C:/Users/barte/OneDrive/Pulpit/json");
+            /*Path dir=Paths.get("C:/Users/barte/OneDrive/Pulpit/json");
             parser parser=new parser(dir);
             LinkedHashMap<String, verdict> verdicts=parser.getVerdicts();
             LinkedHashMap<String, judge>judges =parser.getJudges();
@@ -43,7 +45,39 @@ public class main
             System.out.println("ADMINISTRATIVE: "+statsPerType.get("ADMINISTRATIVE"));
             System.out.println("CONSTITUTIONAL_TRIBUNAL: " +statsPerType.get("CONSTITUTIONAL_TRIBUNAL"));
             System.out.println("NATIONAL_APPEAL_CHAMBER: "+statsPerType.get("NATIONAL_APPEAL_CHAMBER"));
+            */
+            Scanner s=new Scanner(System.in);
+            System.out.print("Podaj ścieżkę...");
+            String path=s.nextLine();
+            Path dir=Paths.get(path);
+            parser parser=new parser(dir);
+            LinkedHashMap<String, verdict> verdicts=parser.getVerdicts();
+            System.out.println();
+            System.out.print(">");
+            String command=s.nextLine();
+            while(true)
+            {
+                switch (command)
+                {
+                    case "Quit": break;
+                    case "help":
+                        System.out.println("Available commands: ");
+                        System.out.println("rubrum - wyświetlenie metryki jednego lub wielu orzeczeń, na podstawie sygnatury");
+                        System.out.println("content - wyświetlenie uzasadnienia");
+                        System.out.println("judge - wyświetlenie liczby orzeczeń dla wybranego sędziego");
+                        System.out.println("judges - wyświetlenie 10 sędziów o największej liczbie wydanych orzeczeń");
+                        System.out.println("months - wyświetlenie liczby orzeczeń w poszczególnych miesiącach");
+                        System.out.println("courts - wyświetlenie liczby orzeczeń ze względu na typ sądu");
+                        System.out.println("regulations - wyświetlenie 10 najczęściej przywoływanych ustaw");
+                        System.out.println("jury - wyświetlenie liczby spraw przypadających na określony skład sędziowski");
+                        break;
+                    case "rubrum":
+                        System.out.println("Podaj sygnaturę orzeczenia...");
+                        System.out.print(">");
+                        command=s.nextLine();
 
+                }
+            }
         }
         catch (IOException | IllegalArgumentException ex)
         {
