@@ -1,9 +1,6 @@
 package agh.cs.Court;
 
-import agh.cs.Court.orders.orderII;
-import agh.cs.Court.orders.orderIII;
-import agh.cs.Court.orders.orderIV;
-import agh.cs.Court.orders.orderVI;
+import agh.cs.Court.orders.*;
 import agh.cs.Court.structures.judge;
 import agh.cs.Court.structures.verdict;
 import org.json.simple.parser.ParseException;
@@ -37,6 +34,15 @@ public class main
             {
                 System.out.println("Miesiąc "+i+" liczba wyroków: "+tab[i]);
             }
+
+            orderVII o7=new orderVII(verdicts);
+            LinkedHashMap<String,Integer> statsPerType=o7.getCourtTypeStats();
+
+            System.out.println("COMMON: "+statsPerType.get("COMMON"));
+            System.out.println("SUPREME: "+statsPerType.get("SUPREME"));
+            System.out.println("ADMINISTRATIVE: "+statsPerType.get("ADMINISTRATIVE"));
+            System.out.println("CONSTITUTIONAL_TRIBUNAL: " +statsPerType.get("CONSTITUTIONAL_TRIBUNAL"));
+            System.out.println("NATIONAL_APPEAL_CHAMBER: "+statsPerType.get("NATIONAL_APPEAL_CHAMBER"));
 
         }
         catch (IOException | IllegalArgumentException ex)

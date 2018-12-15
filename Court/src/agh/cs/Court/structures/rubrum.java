@@ -51,4 +51,8 @@ public class rubrum
     {
         return this.judgmentDate;
     }
+    public String getCourtType()
+    {
+        return this.courtType;
+    }
 }
