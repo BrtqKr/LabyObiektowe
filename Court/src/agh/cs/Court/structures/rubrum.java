@@ -46,4 +46,9 @@ public class rubrum
             else System.out.println(judgeIter.getRoles(this.caseNumber));
         }
     }
+
+    public String getDate()
+    {
+        return this.judgmentDate;
+    }
 }
