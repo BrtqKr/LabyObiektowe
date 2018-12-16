@@ -10,13 +10,14 @@ import org.jsoup.select.Elements;
 
 public class orderIII
 {
+
     public orderIII(LinkedHashMap<String, verdict> verdicts, String signature)  //wyświetla uzasadnienie
     {
         verdict tmp=verdicts.get(signature);
         String html = tmp.getTextContent();
-        parseTextContent(html);
+        executeOIII(html);
     }
-    private void parseTextContent(String file)
+    public void executeOIII(String file)
     {
         Document doc=Jsoup.parse(file);
         Elements elements=doc.body().select("*");
@@ -25,4 +26,5 @@ public class orderIII
             System.out.println(iter.ownText());
         }
     }
+
 }

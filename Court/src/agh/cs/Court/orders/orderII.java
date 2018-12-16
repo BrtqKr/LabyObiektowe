@@ -1,5 +1,6 @@
 package agh.cs.Court.orders;
 
+import agh.cs.Court.structures.rubrum;
 import agh.cs.Court.structures.verdict;
 
 import java.util.LinkedHashMap;
@@ -11,9 +12,9 @@ public class orderII { //wyświetla rubrum
     {
         this.verdicts=verdicts;
     }
-    public void execute(String caseNum)
+    public rubrum executeOII(String caseNum)
     {
-        this.verdicts.get(caseNum).getRubrum().printMetryka();
+       return this.verdicts.get(caseNum).getRubrum();
 
     }
 

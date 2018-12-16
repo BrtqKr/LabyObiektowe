@@ -32,7 +32,7 @@ public class rubrum
         this.courtType=type;
     }
 
-    public void printMetryka()
+    public void printRubrum()
     {
         System.out.println("Sygnatura orzeczenia: "+this.caseNumber);
         System.out.println("Data wydania orzeczenia: "+this.judgmentDate);

@@ -2,10 +2,10 @@ package agh.cs.Court;
 
 import agh.cs.Court.orders.*;
 import agh.cs.Court.structures.judge;
+import agh.cs.Court.structures.rubrum;
 import agh.cs.Court.structures.verdict;
 import org.json.simple.parser.ParseException;
 
-import java.io.Console;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -16,6 +16,7 @@ public class main
 {
     public static void main(String[] args)throws ParseException,IllegalArgumentException
     {
+
         try
         {
             /*Path dir=Paths.get("C:/Users/barte/OneDrive/Pulpit/json");
@@ -52,11 +53,12 @@ public class main
             Path dir=Paths.get(path);
             parser parser=new parser(dir);
             LinkedHashMap<String, verdict> verdicts=parser.getVerdicts();
+            LinkedHashMap<String, judge> judges=parser.getJudges();
             System.out.println();
-            System.out.print(">");
-            String command=s.nextLine();
             while(true)
             {
+                System.out.print(">");
+                String command=s.nextLine();
                 switch (command)
                 {
                     case "Quit": break;
@@ -75,7 +77,72 @@ public class main
                         System.out.println("Podaj sygnaturę orzeczenia...");
                         System.out.print(">");
                         command=s.nextLine();
+                        orderII o2=new orderII(verdicts);
+                        rubrum r= o2.executeOII(command);
+                        r.printRubrum();
+                        break;
+                    case "content":
+                        System.out.println("Podaj sygnaturę orzeczenia...");
+                        System.out.print(">");
+                        command=s.nextLine();
+                        orderIII o3=new orderIII(verdicts,command);
+                        break;
+                    case "judge":
+                        System.out.println("Podaj imię i nazwisko sędziego...");
+                        System.out.print(">");
+                        command=s.nextLine();
+                        orderIV o4=new orderIV(judges,command);
+                        judge tmp=o4.getJudgeResult();
+                        System.out.println(command+", liczba orzeczeń: "+tmp.getCasesNumber());
+                        break;
+                    //case "judges":
 
+                    case "months":
+                        orderVI o6=new orderVI(verdicts);
+                        int[] stats=o6.getStats();
+                        for(int i=1;i<stats.length;i++)
+                        {
+                            switch (i)
+                            {
+                                case 1:System.out.print("Styczeń, ");
+                                break;
+                                case 2:System.out.print("Luty, ");
+                                break;
+                                case 3:System.out.print("Marzec, ");
+                                break;
+                                case 4:System.out.print("Kwiecień, ");
+                                break;
+                                case 5:System.out.print("Maj, ");
+                                break;
+                                case 6:System.out.print("Czerwiec, ");
+                                break;
+                                case 7:System.out.print("Lipiec, ");
+                                break;
+                                case 8:System.out.print("Sierpień, ");
+                                break;
+                                case 9:System.out.print("Wrzesień, ");
+                                break;
+                                case 10:System.out.print("Październik, ");
+                                break;
+                                case 11:System.out.print("Listopad, ");
+                                break;
+                                case 12:System.out.print("Grudzień, ");
+                                break;
+                            }
+                            System.out.println("liczba orzeczeń: "+stats[i]);
+                        }
+                        break;
+                    case "courts":
+                        orderVII o7=new orderVII(verdicts);
+                        LinkedHashMap<String,Integer>courtTypeStats=o7.getCourtTypeStats();
+                        System.out.println("Sądy powszechne, liczba orzeczeń: "+courtTypeStats.get("COMMON"));
+                        System.out.println("Sąd Najwyższy, liczba orzeczeń: "+courtTypeStats.get("SUPREME"));
+                        System.out.println("Sądy administracyjne, liczba orzeczeń: "+courtTypeStats.get("ADMINISTRATIVE"));
+                        System.out.println("Trybunał Konstytucyjny, liczba orzeczeń: "+courtTypeStats.get("CONSTITUTIONAL_TRIBUNAL"));
+                        System.out.println("Krajowa Izba Odwoławcza, liczba orzeczeń: "+courtTypeStats.get("NATIONAL_APPEAL_CHAMBER"));
+                        break;
+                    case "regulations":
+                        orderVIII o8=new orderVIII(verdicts);
                 }
             }
         }
@@ -83,5 +150,6 @@ public class main
         {
             System.out.println(ex);
         }
+
     }
 }

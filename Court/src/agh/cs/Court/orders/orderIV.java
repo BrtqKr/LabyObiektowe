@@ -6,9 +6,11 @@ import java.util.LinkedHashMap;
 
 public class orderIV
 {
+    private judge judgeResult;
     public orderIV(LinkedHashMap<String, judge > judges, String name)
     {
             judge tmp=judges.get(name);
-            System.out.println(name+", liczba orzeczeń: "+tmp.getCasesNumber());
+            this.judgeResult=tmp;
     }
+    public judge getJudgeResult(){return this.judgeResult;}
 }

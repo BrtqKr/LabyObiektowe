@@ -56,4 +56,8 @@ public class verdict
     {
         return this.rubrum;
     }
+    public LinkedList<regulation> getRegulations()
+    {
+        return this.regulations;
+    }
 }

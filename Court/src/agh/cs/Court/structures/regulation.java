@@ -16,4 +16,6 @@ public class regulation
         this.journalEntry=entry;
         this.text=text;
     }
+    public String getTitle(){return this.journalTitle;}
+    public String getText(){return this.text;}
 }
