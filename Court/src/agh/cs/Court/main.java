@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.LinkedHashMap;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class main
@@ -48,6 +49,7 @@ public class main
             System.out.println("NATIONAL_APPEAL_CHAMBER: "+statsPerType.get("NATIONAL_APPEAL_CHAMBER"));
             */
             Scanner s=new Scanner(System.in);
+            Scanner sint=new Scanner(System.in);
             System.out.print("Podaj ścieżkę...");
             String path=s.nextLine();
             Path dir=Paths.get(path);
@@ -148,15 +150,19 @@ public class main
                     case "jury":
                         System.out.println("Podaj liczebność składu sędziowskiego...");
                         System.out.print(">");
-                        int commandInt=s.nextInt();
-                        String[] jury=new String[commandInt];
+                        int judgesNo=sint.nextInt();
+                        LinkedList<String> jury=new LinkedList<>();
                         System.out.println("Podaj sędziów należących do składu...");
-                        for(int i=0;i<commandInt;i++)
+                        for(int i=0;i<judgesNo;i++)
                         {
+                            s.reset();
+                            System.out.print(">");
                             command=s.nextLine();
-                            jury[i]=command;
+                            jury.add(command);
                         }
-
+                        orderIX o9=new orderIX(jury,verdicts,judgesNo);
+                        System.out.println("Liczba spraw zadanego składu sędziowskiego: "+o9.getTotal() );
+                        break;
 
                 }
             }

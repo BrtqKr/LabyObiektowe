@@ -2,6 +2,7 @@ package agh.cs.Court.structures;
 
 import agh.cs.Court.structures.judge;
 
+import java.util.LinkedHashMap;
 import java.util.LinkedList;
 
 public class rubrum
@@ -10,13 +11,15 @@ public class rubrum
     private String judgmentDate;
     private String courtType;
     private LinkedList<judge> judges;
+    private LinkedList<String>jury;
 
-    public rubrum(String id, String judgmentDate, String courtType, LinkedList<judge> judges)
+    public rubrum(String id, String judgmentDate, String courtType, LinkedList<judge> judges,LinkedList<String>jury)
     {
         this.caseNumber=id;
         this.judgmentDate=judgmentDate;
         this.courtType=courtType;
         this.judges=judges;
+        this.jury=jury;
     }
 
     public void setID(String id)
@@ -55,4 +58,5 @@ public class rubrum
     {
         return this.courtType;
     }
+    public LinkedList<String> getJury(){return this.jury;}
 }

@@ -86,9 +86,11 @@ public class parser {
             JSONArray judges = (JSONArray) item.get("judges");
             Iterator<JSONObject> judgesIterator = judges.iterator();
             LinkedList<judge> currentJudges = new LinkedList<>();
+            LinkedList<String> currentJury= new LinkedList<>();
             while (judgesIterator.hasNext()) {
                 JSONObject judge = judgesIterator.next();
                 String fullName = (String)judge.get("name");
+                currentJury.add(fullName);
                 LinkedList<String> currentRoles = new LinkedList<>();
                 JSONArray roles = (JSONArray) judge.get("specialRoles");
                 Iterator<String> rolesIterator = roles.iterator();
@@ -154,7 +156,7 @@ public class parser {
                 regulations.add(r);
             }
             String judgmentDate = (String)item.get("judgmentDate");
-            rubrum m = new rubrum(caseNo, judgmentDate, typeString, currentJudges);
+            rubrum m = new rubrum(caseNo, judgmentDate, typeString, currentJudges,currentJury);
             verdict v = new verdict(m, courtCases, judgmentTypeString, regulations,textContentString,id,caseNo);
             verdicts.put(caseNo,v);
     }
