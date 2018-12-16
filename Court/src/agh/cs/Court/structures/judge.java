@@ -33,7 +33,7 @@ public class judge
         }
         return result.toString();
     }
-    public int getCasesNumber()
+    public Integer getCasesNumber()
     {
         return this.cases.size();
     }

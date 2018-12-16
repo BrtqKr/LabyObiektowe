@@ -61,7 +61,7 @@ public class main
                 String command=s.nextLine();
                 switch (command)
                 {
-                    case "Quit": break;
+                    case "Quit": System.exit(0);
                     case "help":
                         System.out.println("Available commands: ");
                         System.out.println("rubrum - wyświetlenie metryki jednego lub wielu orzeczeń, na podstawie sygnatury");
@@ -95,8 +95,9 @@ public class main
                         judge tmp=o4.getJudgeResult();
                         System.out.println(command+", liczba orzeczeń: "+tmp.getCasesNumber());
                         break;
-                    //case "judges":
-
+                    case "judges":
+                        orderV o5=new orderV(judges);
+                        break;
                     case "months":
                         orderVI o6=new orderVI(verdicts);
                         int[] stats=o6.getStats();
@@ -143,6 +144,7 @@ public class main
                         break;
                     case "regulations":
                         orderVIII o8=new orderVIII(verdicts);
+                        break;
                 }
             }
         }

@@ -2,15 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b26a3bd4-963e-431b-a157-60077af7c1b5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/agh/cs/Court/orders/orderIX.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Court/agh/cs/Court/orders/orderVIII.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Court/agh/cs/Court/orders/orderVIII.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/agh/cs/Court/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/agh/cs/Court/main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/agh/cs/Court/orders/orderII.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/agh/cs/Court/orders/orderII.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/agh/cs/Court/orders/orderIII.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/agh/cs/Court/orders/orderIII.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/agh/cs/Court/orders/orderIV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/agh/cs/Court/orders/orderIV.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/agh/cs/Court/orders/orderV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/agh/cs/Court/orders/orderV.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/agh/cs/Court/orders/orderVIII.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/agh/cs/Court/orders/orderVIII.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/agh/cs/Court/structures/regulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/agh/cs/Court/structures/regulation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/agh/cs/Court/structures/rubrum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/agh/cs/Court/structures/rubrum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/agh/cs/Court/structures/verdict.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/agh/cs/Court/structures/verdict.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/agh/cs/Court/structures/judge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/agh/cs/Court/structures/judge.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,7 +21,7 @@
     <session id="-1180395513">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="12" />
+          <entry key="project.closed" value="13" />
           <entry key="project.open.time.111" value="1" />
           <entry key="project.open.time.116" value="1" />
           <entry key="project.open.time.118" value="1" />
@@ -34,108 +32,38 @@
           <entry key="project.open.time.128" value="1" />
           <entry key="project.open.time.129" value="1" />
           <entry key="project.open.time.133" value="1" />
+          <entry key="project.open.time.137" value="1" />
           <entry key="project.open.time.40" value="1" />
           <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="14" />
+          <entry key="project.opened" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="172" />
+          <entry key="java" value="178" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="172" />
+          <entry key="JAVA" value="178" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="50" />
-          <entry key="java" value="14707" />
+          <entry key="java" value="15261" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="14707" />
+          <entry key="JAVA" value="15261" />
           <entry key="PLAIN_TEXT" value="50" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/agh/cs/Court/main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/agh/cs/Court/orders/orderVIII.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="44" column="17" lean-forward="true" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/agh/cs/Court/orders/orderVII.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="14" column="44" lean-forward="true" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1017#1018#0" expanded="true" />
-                <element signature="e#1059#1060#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/agh/cs/Court/structures/regulation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="45" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/agh/cs/Court/structures/verdict.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="59" column="5" lean-forward="true" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
-              <folding>
-                <element signature="e#1596#1597#0" expanded="true" />
-                <element signature="e#1630#1631#0" expanded="true" />
-                <element signature="e#1722#1723#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/agh/cs/Court/structures/rubrum.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="34" column="27" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -184,9 +112,7 @@
         <option value="$PROJECT_DIR$/src/agh/cs/Court/orderControler.java" />
         <option value="$PROJECT_DIR$/src/agh/cs/Court/verdict.java" />
         <option value="$PROJECT_DIR$/src/agh/cs/Court/orderIII.java" />
-        <option value="$PROJECT_DIR$/src/agh/cs/Court/structures/judge.java" />
         <option value="$PROJECT_DIR$/src/agh/cs/Court/parser.java" />
-        <option value="$PROJECT_DIR$/src/agh/cs/Court/orders/orderV.java" />
         <option value="$PROJECT_DIR$/src/agh/cs/Court/orders/orderVI.java" />
         <option value="$PROJECT_DIR$/src/agh/cs/Court/orders/orderVII.java" />
         <option value="$PROJECT_DIR$/src/agh/cs/Court/structures/verdict.java" />
@@ -195,8 +121,11 @@
         <option value="$PROJECT_DIR$/src/agh/cs/Court/structures/rubrum.java" />
         <option value="$PROJECT_DIR$/src/agh/cs/Court/orders/orderIII.java" />
         <option value="$PROJECT_DIR$/src/agh/cs/Court/orders/orderIV.java" />
-        <option value="$PROJECT_DIR$/src/agh/cs/Court/main.java" />
         <option value="$PROJECT_DIR$/src/agh/cs/Court/orders/orderVIII.java" />
+        <option value="$PROJECT_DIR$/src/agh/cs/Court/orders/orderIX.java" />
+        <option value="$PROJECT_DIR$/src/agh/cs/Court/structures/judge.java" />
+        <option value="$PROJECT_DIR$/src/agh/cs/Court/main.java" />
+        <option value="$PROJECT_DIR$/src/agh/cs/Court/orders/orderV.java" />
       </list>
     </option>
   </component>
@@ -206,7 +135,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
     <option name="y" value="-10" />
     <option name="width" value="1940" />
@@ -221,6 +150,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -264,7 +194,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -274,7 +203,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544922141189" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544957475851" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/jsoup-1.11.3.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -337,17 +266,18 @@
       <workItem from="1544811906579" duration="12400000" />
       <workItem from="1544869937336" duration="6366000" />
       <workItem from="1544894953749" duration="702000" />
-      <workItem from="1544906616898" duration="9469000" />
+      <workItem from="1544906616898" duration="9704000" />
+      <workItem from="1544954171134" duration="3118000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62125000" />
+    <option name="totallyTimeSpent" value="65478000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29865772" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30268458" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -356,7 +286,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32907802" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.4964539" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3319149" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -460,20 +390,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/agh/cs/Court/structures/judge.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="20" column="64" selection-start-line="20" selection-start-column="64" selection-end-line="20" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/agh/cs/Court/structures/rubrum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="34" column="27" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/agh/cs/Court/orders/orderII.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -498,29 +414,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/agh/cs/Court/orders/orderV.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="16" column="36" lean-forward="true" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/agh/cs/Court/orders/orderVI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="14" column="23" lean-forward="true" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/agh/cs/Court/orders/orderVII.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="14" column="44" lean-forward="true" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1017#1018#0" expanded="true" />
-            <element signature="e#1059#1060#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -534,6 +431,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/agh/cs/Court/orders/orderVII.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="14" column="44" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1017#1018#0" expanded="true" />
+            <element signature="e#1059#1060#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/agh/cs/Court/structures/regulation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -543,20 +452,41 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/agh/cs/Court/structures/verdict.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="59" column="5" lean-forward="true" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
+        <state relative-caret-position="595">
+          <caret line="59" column="5" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
           <folding>
             <element signature="e#1596#1597#0" expanded="true" />
             <element signature="e#1630#1631#0" expanded="true" />
-            <element signature="e#1722#1723#0" expanded="true" />
+            <element signature="e#1726#1727#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/agh/cs/Court/structures/rubrum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="34" column="27" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/agh/cs/Court/orders/orderIX.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/agh/cs/Court/orders/orderV.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="19" column="106" selection-start-line="19" selection-start-column="106" selection-end-line="19" selection-end-column="106" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/agh/cs/Court/main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="-459">
+          <caret line="97" column="34" selection-start-line="97" selection-start-column="34" selection-end-line="97" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -565,11 +495,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/agh/cs/Court/orders/orderVIII.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="44" column="17" lean-forward="true" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="17" />
+        <state relative-caret-position="231">
+          <caret line="28" column="8" lean-forward="true" selection-start-line="28" selection-start-column="8" selection-end-line="29" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/agh/cs/Court/structures/judge.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="35" column="18" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
         </state>
       </provider>
     </entry>

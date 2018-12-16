@@ -33,15 +33,16 @@ public class orderVIII     // 10 najczęściej przywoływanych ustaw
             for (String title : regulationsStats.keySet()) //iteruje po tytułach i szuka tytułu największej
             {
                 if (regulationsStats.get(title) == l.get(i)) {
-                    for (String k : keys)//iteruje po orzeczeniach
+                    /*for (String k : keys)//iteruje po orzeczeniach
                     {
                         LinkedList<regulation> regulations = verdicts.get(k).getRegulations();
                         for (regulation tmp : regulations)//szuka
                         {
-                            if (tmp.getTitle().equals(title)) System.out.println(tmp.getText()+l.get(i));
+                            if (tmp.getTitle().equals(title)) System.out.println(tmp.getText()+" "+l.get(i));
                         }
                     }
-                    System.out.println(l.get(i));
+                    */
+                    System.out.println(title+" "+l.get(i));//zapytać czy to tak ma być, czy ma wyświetlać tekst?
                 }
 
             }
