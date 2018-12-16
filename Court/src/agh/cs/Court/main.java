@@ -9,9 +9,7 @@ import org.json.simple.parser.ParseException;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.LinkedHashMap;
-import java.util.LinkedList;
-import java.util.Scanner;
+import java.util.*;
 
 public class main
 {
@@ -20,7 +18,8 @@ public class main
 
         try
         {
-            /*Path dir=Paths.get("C:/Users/barte/OneDrive/Pulpit/json");
+            /*Path dir=Paths.get("C:/Users/barte/OneDrive/Pulpit/jsonVerdicts");
+            //C:/Users/barte/OneDrive/Pulpit/htmlVerdicts
             parser parser=new parser(dir);
             LinkedHashMap<String, verdict> verdicts=parser.getVerdicts();
             LinkedHashMap<String, judge>judges =parser.getJudges();
@@ -50,10 +49,20 @@ public class main
             */
             Scanner s=new Scanner(System.in);
             Scanner sint=new Scanner(System.in);
-            System.out.print("Podaj ścieżkę...");
+            System.out.print("Podaj ścieżkę do folderu JSON...");
             String path=s.nextLine();
             Path dir=Paths.get(path);
-            parser parser=new parser(dir);
+            System.out.print("Podaj ścieżkę do folderu HTML...");
+            String htmlPath=s.nextLine();
+            Path htmlDir=Paths.get(htmlPath);
+            parser parser=new parser(dir,htmlDir);
+
+            List<Path> x=parser.getHtmlDirectoryFiles();
+            for(Path p:x)
+            {
+                System.out.println(p.getFileName());
+            }
+
             LinkedHashMap<String, verdict> verdicts=parser.getVerdicts();
             LinkedHashMap<String, judge> judges=parser.getJudges();
             System.out.println();

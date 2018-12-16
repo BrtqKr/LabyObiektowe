@@ -8,7 +8,10 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import org.jsoup.*;
+import org.jsoup.nodes.*;
 
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.DirectoryIteratorException;
@@ -17,21 +20,28 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.*;
 
+import static java.nio.file.Files.probeContentType;
+
 public class parser {
     private LinkedHashMap<String, verdict> verdicts;
     private LinkedHashMap<String, judge> judges;
     private List<Path>DirectoryFiles;
     private Path dir;
 
+    private List<Path>HtmlDirectoryFiles;
 
 
-    public parser(Path dir) throws IOException, ParseException
+
+    public parser(Path dir,Path htmlDir) throws IOException, ParseException
     {
         this.dir=dir;
         this.verdicts=new LinkedHashMap<>();
         this.judges=new LinkedHashMap<>();
+        this.HtmlDirectoryFiles=new LinkedList<>();
         parseDirectory();
         parseFiles();
+        parseHTMLDirectory(htmlDir);
+        parseHTMLFiles();
     }
 
     public void parseDirectory() throws DirectoryIteratorException,IOException
@@ -98,8 +108,8 @@ public class parser {
                     String roleString = rolesIterator.next();
                     currentRoles.add(roleString);
                 }
-                if(this.judges.containsKey(fullName))                           //zastanowić się czy każdy sędzia w currentJudges otrzyma
-                {                                                               // te role które będą później??
+                if(this.judges.containsKey(fullName))
+                {
                     agh.cs.Court.structures.judge tmp=this.judges.get(fullName);
                     tmp.addRole(courtCases.get(0),currentRoles);
                     tmp.addCase(caseNo);
@@ -137,7 +147,6 @@ public class parser {
                 String reporter = (String)reportersIterator.next();
                 reporters.add(reporter);
             }
-            //JSONObject textContent= (JSONObject)item.get("textContent");
             String textContentString=(String)item.get("textContent");
             JSONArray referencedRegulations = (JSONArray) item.get("referencedRegulations");
             Iterator<JSONObject> regulationsIterator = referencedRegulations.iterator();
@@ -160,6 +169,38 @@ public class parser {
             verdict v = new verdict(m, courtCases, judgmentTypeString, regulations,textContentString,id,caseNo);
             verdicts.put(caseNo,v);
     }
+
+    public void parseHTMLDirectory(Path htmlDir)
+    {
+
+        try (DirectoryStream<Path> stream = Files.newDirectoryStream(htmlDir)) {   //dodać coś żeby parsowało tylko html
+            for (Path entry : stream) {
+                if(!Files.isDirectory(entry))
+                {
+                    this.HtmlDirectoryFiles.add(entry);
+                }
+                else
+                {
+                    parseHTMLDirectory(entry);
+                }
+
+            }
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    public void parseHTMLFiles() throws IOException
+    {
+            for (Path iter : this.HtmlDirectoryFiles) {
+                /*Document doc = Jsoup.parse(new File(iter.toString()), "UTF-8");
+                System.out.println(doc.title());
+                System.out.println(doc.select("tr.niezaznaczona").text());
+                */
+                System.out.println(iter.getFileName());
+            }
+    }
+
+
     public LinkedHashMap<String, verdict> getVerdicts()
     {
         return this.verdicts;
@@ -167,6 +208,10 @@ public class parser {
     public LinkedHashMap<String, judge> getJudges()
     {
         return this.judges;
+    }
+
+    public List<Path> getHtmlDirectoryFiles() {
+        return HtmlDirectoryFiles;
     }
 }
 
