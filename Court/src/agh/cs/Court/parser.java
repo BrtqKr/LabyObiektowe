@@ -191,14 +191,16 @@ public class parser {
     }
     public void parseHTMLFiles() throws IOException
     {
+
             for (Path iter : this.HtmlDirectoryFiles) {
-                /*Document doc = Jsoup.parse(new File(iter.toString()), "UTF-8");
-                System.out.println(doc.title());
-                System.out.println(doc.select("tr.niezaznaczona").text());
-                */
-                System.out.println(iter.getFileName());
+                Document doc = Jsoup.parse(new File(iter.toString()), "UTF-8");
+                 System.out.println(doc.title());
+                String caseNum=(doc.select("war_header").text());
+                //String[]tab=caseNum.split("-",2);
+                //System.out.println(tab[0]);
+                System.out.println(caseNum);
             }
-    }
+}
 
 
     public LinkedHashMap<String, verdict> getVerdicts()

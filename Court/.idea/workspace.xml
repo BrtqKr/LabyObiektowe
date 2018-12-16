@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b26a3bd4-963e-431b-a157-60077af7c1b5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/agh/cs/Court/consoleFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Court/agh/cs/Court/orders/orderIX.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Court/agh/cs/Court/orders/orderIX.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Court/agh/cs/Court/Parser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Court/agh/cs/Court/Parser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Court/agh/cs/Court/main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Court/agh/cs/Court/main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/agh/cs/Court/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/agh/cs/Court/main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/agh/cs/Court/parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/agh/cs/Court/parser.java" afterDir="false" />
     </list>
@@ -18,7 +20,7 @@
     <session id="-1180395513">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="13" />
+          <entry key="project.closed" value="14" />
           <entry key="project.open.time.111" value="1" />
           <entry key="project.open.time.116" value="1" />
           <entry key="project.open.time.118" value="1" />
@@ -37,23 +39,23 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="197" />
+          <entry key="java" value="200" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="197" />
+          <entry key="JAVA" value="200" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="50" />
-          <entry key="java" value="18427" />
+          <entry key="java" value="20767" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="18427" />
+          <entry key="JAVA" value="20767" />
           <entry key="PLAIN_TEXT" value="50" />
         </counts>
       </usages-collector>
@@ -64,8 +66,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/agh/cs/Court/main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="21" column="57" lean-forward="true" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="57" />
+            <state relative-caret-position="208">
+              <caret line="49" column="53" selection-start-line="49" selection-start-column="53" selection-end-line="49" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -73,20 +75,43 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/agh/cs/Court/parser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="175" column="120" selection-start-line="175" selection-start-column="120" selection-end-line="175" selection-end-column="120" />
+            <state relative-caret-position="225">
+              <caret line="200" column="42" selection-start-line="200" selection-start-column="42" selection-end-line="200" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#8533#8534#0" expanded="true" />
-                <element signature="e#8569#8570#0" expanded="true" />
-                <element signature="e#8627#8628#0" expanded="true" />
-                <element signature="e#8661#8662#0" expanded="true" />
-                <element signature="e#8766#8767#0" expanded="true" />
-                <element signature="e#8807#8808#0" expanded="true" />
+                <element signature="e#8518#8519#0" expanded="true" />
+                <element signature="e#8554#8555#0" expanded="true" />
+                <element signature="e#8612#8613#0" expanded="true" />
+                <element signature="e#8646#8647#0" expanded="true" />
+                <element signature="e#8695#8696#0" expanded="true" />
+                <element signature="e#8736#8737#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/agh/cs/Court/consoleFilter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="37" column="86" selection-start-line="37" selection-start-column="86" selection-end-line="37" selection-end-column="86" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2439#2440#0" expanded="true" />
+                <element signature="e#2466#2467#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/agh/cs/Court/orders/orderII.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -153,8 +178,9 @@
         <option value="$PROJECT_DIR$/src/agh/cs/Court/structures/rubrum.java" />
         <option value="$PROJECT_DIR$/src/agh/cs/Court/orders/orderIX.java" />
         <option value="$PROJECT_DIR$/src/agh/cs/Court/orders/orderII.java" />
-        <option value="$PROJECT_DIR$/src/agh/cs/Court/main.java" />
         <option value="$PROJECT_DIR$/src/agh/cs/Court/parser.java" />
+        <option value="$PROJECT_DIR$/src/agh/cs/Court/main.java" />
+        <option value="$PROJECT_DIR$/src/agh/cs/Court/consoleFilter.java" />
       </list>
     </option>
   </component>
@@ -232,7 +258,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544985962741" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545001108150" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/jsoup-1.11.3.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -296,12 +322,12 @@
       <workItem from="1544869937336" duration="6366000" />
       <workItem from="1544894953749" duration="702000" />
       <workItem from="1544906616898" duration="9704000" />
-      <workItem from="1544954171134" duration="25164000" />
+      <workItem from="1544954171134" duration="38278000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87524000" />
+    <option name="totallyTimeSpent" value="100638000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -316,7 +342,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32907802" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3716312" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3177305" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -458,13 +484,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/agh/cs/Court/orders/orderII.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/agh/cs/Court/orders/orderVII.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -523,28 +542,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/agh/cs/Court/orders/orderII.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/agh/cs/Court/parser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="200" column="42" selection-start-line="200" selection-start-column="42" selection-end-line="200" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#8518#8519#0" expanded="true" />
+            <element signature="e#8554#8555#0" expanded="true" />
+            <element signature="e#8612#8613#0" expanded="true" />
+            <element signature="e#8646#8647#0" expanded="true" />
+            <element signature="e#8695#8696#0" expanded="true" />
+            <element signature="e#8736#8737#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/TaskStorage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1253" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/agh/cs/Court/main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="21" column="57" lean-forward="true" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="57" />
+        <state relative-caret-position="208">
+          <caret line="49" column="53" selection-start-line="49" selection-start-column="53" selection-end-line="49" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/agh/cs/Court/parser.java">
+    <entry file="file://$PROJECT_DIR$/src/agh/cs/Court/consoleFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="175" column="120" selection-start-line="175" selection-start-column="120" selection-end-line="175" selection-end-column="120" />
+        <state relative-caret-position="340">
+          <caret line="37" column="86" selection-start-line="37" selection-start-column="86" selection-end-line="37" selection-end-column="86" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#8533#8534#0" expanded="true" />
-            <element signature="e#8569#8570#0" expanded="true" />
-            <element signature="e#8627#8628#0" expanded="true" />
-            <element signature="e#8661#8662#0" expanded="true" />
-            <element signature="e#8766#8767#0" expanded="true" />
-            <element signature="e#8807#8808#0" expanded="true" />
+            <element signature="e#2439#2440#0" expanded="true" />
+            <element signature="e#2466#2467#0" expanded="true" />
           </folding>
         </state>
       </provider>

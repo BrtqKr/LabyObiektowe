@@ -47,6 +47,13 @@ public class main
             System.out.println("CONSTITUTIONAL_TRIBUNAL: " +statsPerType.get("CONSTITUTIONAL_TRIBUNAL"));
             System.out.println("NATIONAL_APPEAL_CHAMBER: "+statsPerType.get("NATIONAL_APPEAL_CHAMBER"));
             */
+            consoleFilter c=new consoleFilter(" fuck this shit");
+            System.out.println(c.getOrder());
+            for(String arg:c.getArgs())
+            {
+                System.out.println(arg);
+            }
+
             Scanner s=new Scanner(System.in);
             Scanner sint=new Scanner(System.in);
             System.out.print("Podaj ścieżkę do folderu JSON...");
@@ -57,11 +64,6 @@ public class main
             Path htmlDir=Paths.get(htmlPath);
             parser parser=new parser(dir,htmlDir);
 
-            List<Path> x=parser.getHtmlDirectoryFiles();
-            for(Path p:x)
-            {
-                System.out.println(p.getFileName());
-            }
 
             LinkedHashMap<String, verdict> verdicts=parser.getVerdicts();
             LinkedHashMap<String, judge> judges=parser.getJudges();
