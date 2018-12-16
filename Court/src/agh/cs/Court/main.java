@@ -145,6 +145,19 @@ public class main
                     case "regulations":
                         orderVIII o8=new orderVIII(verdicts);
                         break;
+                    case "jury":
+                        System.out.println("Podaj liczebność składu sędziowskiego...");
+                        System.out.print(">");
+                        int commandInt=s.nextInt();
+                        String[] jury=new String[commandInt];
+                        System.out.println("Podaj sędziów należących do składu...");
+                        for(int i=0;i<commandInt;i++)
+                        {
+                            command=s.nextLine();
+                            jury[i]=command;
+                        }
+
+
                 }
             }
         }
