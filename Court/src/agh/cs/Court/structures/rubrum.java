@@ -59,4 +59,5 @@ public class rubrum
         return this.courtType;
     }
     public LinkedList<String> getJury(){return this.jury;}
+    public int getJudgesNo(){return this.judges.size();}
 }

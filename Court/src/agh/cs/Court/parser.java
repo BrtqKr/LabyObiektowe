@@ -40,8 +40,8 @@ public class parser {
         this.HtmlDirectoryFiles=new LinkedList<>();
         parseDirectory();
         parseFiles();
-        parseHTMLDirectory(htmlDir);
-        parseHTMLFiles();
+        //parseHTMLDirectory(htmlDir);
+        //parseHTMLFiles();
     }
 
     public void parseDirectory() throws DirectoryIteratorException,IOException
@@ -169,7 +169,7 @@ public class parser {
             verdict v = new verdict(m, courtCases, judgmentTypeString, regulations,textContentString,id,caseNo);
             verdicts.put(caseNo,v);
     }
-
+/*
     public void parseHTMLDirectory(Path htmlDir)
     {
 
@@ -201,7 +201,7 @@ public class parser {
                 System.out.println(caseNum);
             }
 }
-
+*/
 
     public LinkedHashMap<String, verdict> getVerdicts()
     {
