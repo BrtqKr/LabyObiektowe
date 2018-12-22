@@ -6,7 +6,8 @@ import java.util.List;
 public class consoleFilter {
     private String commandLine;
     private String order;
-    private List<String> args;
+    private List<String> args=new ArrayList<>();
+    private String[] argsTab;
 
     public consoleFilter(String commandLine) {
         this.commandLine = commandLine;
@@ -21,7 +22,7 @@ public class consoleFilter {
             if(this.commandLine.charAt(i)==' '&&flag)
             {
                 this.order=s.toString();
-                if(!checkArgNo())filterArgs(i);
+                if(!checkArgNo())filterArgs(i+1);
                 break;
             }
             else if((i==commandLine.length()-1)&&flag)
@@ -44,45 +45,47 @@ public class consoleFilter {
 
     }
 
-    private void filterArgs(int index)    //argumenty muszą być podawane w cudzysłowie ptoblrm z nullpointerem
+    private void filterArgs(int index)    //argumenty muszą być podawane w cudzysłowie, nullpointer ogarnięty ale nie wykrywa argumentów
     {
+
+
         boolean quoteFlag = false;
-        boolean wordFlag = false;
         StringBuilder s = new StringBuilder();
-        this.args = new ArrayList<>();
-        for (int i = index; i < commandLine.length(); i++) {
-            if (commandLine.charAt(index) == '"' && !quoteFlag) {
+        List<String>tmp=new ArrayList<>();
+
+        for (int i = index; i < this.commandLine.length(); i++) {
+            if (commandLine.charAt(i) == '"' && !quoteFlag) {
                 quoteFlag = true;
-                wordFlag = true;
-            } else if (wordFlag && quoteFlag && commandLine.charAt(index + 1) != '"' && commandLine.charAt(index) != '"') {
-                s.append(commandLine.charAt(index));
-            } else if (commandLine.charAt(index + 1) == '"' && quoteFlag && wordFlag) {
-                s.append(commandLine.charAt(index));
-                this.args.add(s.toString());
+
+            } else if (quoteFlag && commandLine.charAt(i) != '"' ) {
+                s.append(commandLine.charAt(i));
+            } else if (commandLine.charAt(i) == '"' && quoteFlag  ) {
+                tmp.add(s.toString());
                 s = new StringBuilder();
-                wordFlag = false;
+                quoteFlag=false;
 
-            } else if (quoteFlag && !wordFlag && commandLine.charAt(index) == '"') {
-                quoteFlag = false;
             }
-            index++;
         }
-
-
+        this.args=tmp;
     }
+
 
     public boolean checkArgNo()
     {
             switch (this.order)
             {
                 case "rubrum":
+                    if(this.args.size()>=1)
                         return true;
+                    else return false;
                 case "content":
                     if (this.args.size() == 1)
                         return true;
+                    else return false;
                 case "judge":
                     if (this.args.size() == 1)
                         return true;
+                    else return false;
                 case "jury":
                     return true;
                 case "regulations":

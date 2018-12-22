@@ -47,8 +47,9 @@ public class main
             System.out.println("NATIONAL_APPEAL_CHAMBER: "+statsPerType.get("NATIONAL_APPEAL_CHAMBER"));
             */
             consoleFilter test=new consoleFilter("rubrum \"nfeiusafa\"nfoasejfoa\"negfioase\"");
-            System.out.println(test.getOrder());
+            System.out.println(test.getOrder()+"...");
             System.out.println(test.getArgs().size());
+
             for(int i=0;i<test.getArgs().size();i++)
             {
                 System.out.println(test.getArgs().get(i));
@@ -72,7 +73,7 @@ public class main
             {
                 System.out.print(">");
                 String command=s.nextLine();
-                consoleFilter c=new consoleFilter(command);    //nie działają komendy bezargumentowe poprawić consoleFilter
+                consoleFilter c=new consoleFilter(command); //working
                 if(c.checkArgNo()) {
                     switch (c.getOrder()) {
                         case "Quit":
@@ -97,6 +98,7 @@ public class main
                             for(int i=0;i<c.getArgs().size();i++) {
                                 rubrum r = o2.executeOII(c.getArgs().get(i));
                                 r.printRubrum();
+                                if(c.getArgs().size()>1)System.out.println();
                             }
                             break;
                         case "content":
@@ -187,13 +189,7 @@ public class main
                 }
                 else
                 {
-                    System.out.println("Podano złą liczbę argumentów");
-                    System.out.println(c.getOrder());
-                    for(int i=0;i<c.getArgs().size();i++)
-                    {
-                        System.out.println(c.getArgs().get(i)+"...");
-                    }
-                    System.out.println(c.getArgs().size());
+                    System.out.println("Podano złą liczbę argumentów lub złe polecenie");
                 }
             }
         }
