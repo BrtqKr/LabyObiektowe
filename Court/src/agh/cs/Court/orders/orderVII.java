@@ -9,7 +9,7 @@ import java.util.Set;
 public class orderVII
 {
     private LinkedHashMap<String,Integer>courtTypeStats;
-    public orderVII(LinkedHashMap<String, verdict>verdicts)
+    public orderVII(LinkedHashMap<String, verdict>verdicts) //rozkład statystyczny liczby orzeczeń na typ sądu
     {
         this.courtTypeStats=new LinkedHashMap<>();
         this.courtTypeStats.put("COMMON",0);

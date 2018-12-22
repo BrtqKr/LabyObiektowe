@@ -7,7 +7,7 @@ public class consoleFilter {
     private String commandLine;
     private String order;
     private List<String> args=new ArrayList<>();
-    private String[] argsTab;
+
 
     public consoleFilter(String commandLine) {
         this.commandLine = commandLine;
@@ -16,7 +16,6 @@ public class consoleFilter {
 
     private void filterOrder() {
         boolean flag = false;
-
         StringBuilder s = new StringBuilder();
         for (int i = 0; i < this.commandLine.length(); i++) {
             if(this.commandLine.charAt(i)==' '&&flag)
@@ -41,7 +40,10 @@ public class consoleFilter {
                 s.append(commandLine.charAt(i));
             }
 
+
         }
+        if(!flag && s.toString().equals(""))this.order="";
+
 
     }
 
@@ -93,6 +95,8 @@ public class consoleFilter {
                 case "months":
                     return true;
                 case "judges":
+                    return true;
+                case "courts":
                     return true;
                 case "help":
                     return true;

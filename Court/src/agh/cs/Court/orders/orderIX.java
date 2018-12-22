@@ -13,15 +13,7 @@ public class orderIX
     private int[] total;
     public orderIX(LinkedHashMap<String, verdict> verdicts)//wyświetla liczbę spraw przypadających na określony skład sędziowski (określoną liczbę sędziów)
     {
-       /* Set<String> keys = verdicts.keySet();
-        int counter=0;
-        for (String k : keys)
-        {
-           LinkedList<String> tmp=verdicts.get(k).getRubrum().getJury();
-           if(tmp.containsAll(jury)&&tmp.size()==judgesNo)counter++;
-        }
-        this.total=counter;
-*/
+
        Set<String>keys=verdicts.keySet();
        int[] counter=new int[20];
        for(String k:keys)
