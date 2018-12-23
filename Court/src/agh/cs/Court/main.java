@@ -4,12 +4,16 @@ import agh.cs.Court.orders.*;
 import agh.cs.Court.structures.judge;
 import agh.cs.Court.structures.rubrum;
 import agh.cs.Court.structures.verdict;
+/*import org.jline.reader.LineReader;
+import org.jline.reader.LineReaderBuilder;
+import org.jline.terminal.Terminal;
+import org.jline.terminal.TerminalBuilder;*/
+
 import org.jline.reader.LineReader;
 import org.jline.reader.LineReaderBuilder;
 import org.jline.terminal.Terminal;
 import org.jline.terminal.TerminalBuilder;
 import org.json.simple.parser.ParseException;
-import org.jline.*;
 
 import java.io.IOException;
 import java.nio.file.Path;
@@ -25,47 +29,19 @@ public class main
         {
             /*Path dir=Paths.get("C:/Users/barte/OneDrive/Pulpit/jsonVerdicts");
             //C:/Users/barte/OneDrive/Pulpit/htmlVerdicts
-            parser parser=new parser(dir);
-            LinkedHashMap<String, verdict> verdicts=parser.getVerdicts();
-            LinkedHashMap<String, judge>judges =parser.getJudges();
-
-            orderII o2=new orderII(verdicts);
             o2.execute("II AKa 105/11");
+*/
 
-            orderIII o3=new orderIII(verdicts,"II AKa 105/11");
+            Terminal terminal = TerminalBuilder
+                    .builder()
+                    .encoding("UTF-8")
+                    .system(true)
+                    .build();
 
-            orderIV o4=new orderIV(judges,"Andrzej Rzepliński");
-
-            orderVI o6=new orderVI(verdicts);
-            int tab[]= o6.getStats();
-            for(int i=1;i<tab.length;i++)
-            {
-                System.out.println("Miesiąc "+i+" liczba wyroków: "+tab[i]);
-            }
-
-            orderVII o7=new orderVII(verdicts);
-            LinkedHashMap<String,Integer> statsPerType=o7.getCourtTypeStats();
-
-            System.out.println("COMMON: "+statsPerType.get("COMMON"));
-            System.out.println("SUPREME: "+statsPerType.get("SUPREME"));
-            System.out.println("ADMINISTRATIVE: "+statsPerType.get("ADMINISTRATIVE"));
-            System.out.println("NATIONAL_APPEAL_CHAMBER: "+statsPerType.get("NATIONAL_APPEAL_CHAMBER"));
-            */
-            /*consoleFilter test=new consoleFilter("rubrum \"nfeiusafa\"nfoasejfoa\"negfioase\"");
-            System.out.println(test.getOrder()+"...");
-            System.out.println(test.getArgs().size());
-
-            for(int i=0;i<test.getArgs().size();i++)
-            {
-                System.out.println(test.getArgs().get(i));
-            }
-            */
-            Scanner s=new Scanner(System.in);
-            System.out.print("Podaj ścieżkę do folderu JSON...");
-            String path=s.nextLine();
+            LineReader linereader = LineReaderBuilder.builder().terminal(terminal).build();
+            String path=linereader.readLine("Podaj ścieżkę do folderu JSON...");
             Path dir=Paths.get(path);
-            System.out.print("Podaj ścieżkę do folderu HTML...");
-            String htmlPath=s.nextLine();
+            String htmlPath=linereader.readLine("Podaj ścieżkę do folderu HTML...");
             Path htmlDir=Paths.get(htmlPath);
             parser parser=new parser(dir,htmlDir);
 
@@ -74,17 +50,20 @@ public class main
             LinkedHashMap<String, judge> judges=parser.getJudges();
             System.out.println();
             while(true) {
-                System.out.print(">");
-                String command = s.nextLine();
+                String command=linereader.readLine(">");
+
+                System.out.println(command);//test
+
                 if (!command.isEmpty()) {
                     consoleFilter c = new consoleFilter(command);
                     if (!c.getOrder().equals("")) {
                         if (c.checkArgNo()) {
                             switch (c.getOrder()) {
                                 case "Quit":
-                                    System.exit(0);
+                                    terminal.close();
                                 case "help":
                                     System.out.println("Available commands: ");
+                                    System.out.println("Quit - zakończenie pracy programu");
                                     System.out.println("rubrum - wyświetlenie metryki jednego lub wielu orzeczeń, na podstawie sygnatury");
                                     System.out.println("content - wyświetlenie uzasadnienia");
                                     System.out.println("judge - wyświetlenie liczby orzeczeń dla wybranego sędziego");
@@ -189,7 +168,7 @@ public class main
                 }
             }
         }
-        catch (IOException  ex)
+        catch (ParseException|IOException  ex)
         {
             System.out.println(ex);
         }

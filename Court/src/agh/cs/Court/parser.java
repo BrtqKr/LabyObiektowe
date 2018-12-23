@@ -10,6 +10,7 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.jsoup.*;
 import org.jsoup.nodes.*;
+import org.jsoup.select.Elements;
 
 import java.io.File;
 import java.io.FileReader;
@@ -40,8 +41,8 @@ public class parser {
         this.HtmlDirectoryFiles=new LinkedList<>();
         parseDirectory();
         parseFiles();
-        //parseHTMLDirectory(htmlDir);
-        //parseHTMLFiles();
+        parseHTMLDirectory(htmlDir);
+        parseHTMLFiles();
     }
 
     public void parseDirectory() throws DirectoryIteratorException,IOException
@@ -194,11 +195,26 @@ public class parser {
 
             for (Path iter : this.HtmlDirectoryFiles) {
                 Document doc = Jsoup.parse(new File(iter.toString()), "UTF-8");
-                 System.out.println(doc.title());
-                String caseNum=(doc.select("war_header").text());
-                //String[]tab=caseNum.split("-",2);
-                //System.out.println(tab[0]);
-                System.out.println(caseNum);
+                String[] tab=doc.title().split(" - ",2);
+                String caseNo=tab[0];//numer sprawy
+                //System.out.print(caseNo+" ");
+
+
+                Elements tables = doc.select("table.info-list");            //sprawdzić co i jak działa
+                for (Element table : tables) {
+                    Elements trs = table.select("tr");
+                    String[][] trtd = new String[trs.size()][];
+                    for (int i = 0; i < trs.size(); i++) {
+                        Elements tds = trs.get(i).select("td");
+                        trtd[i] = new String[tds.size()];
+                        for (int j = 0; j < tds.size(); j++) {
+                            trtd[i][j] = tds.get(j).text();
+                        }
+                    }
+                }
+
+
+
             }
 }
 

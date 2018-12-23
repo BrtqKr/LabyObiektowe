@@ -76,6 +76,8 @@ public class consoleFilter {
     {
             switch (this.order)
             {
+                case "Quit":
+                    return true;
                 case "rubrum":
                     if(this.args.size()>=1)
                         return true;

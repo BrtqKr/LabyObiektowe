@@ -7,15 +7,8 @@
       <change beforePath="$PROJECT_DIR$/out/production/Court/agh/cs/Court/Parser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Court/agh/cs/Court/Parser.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Court/agh/cs/Court/consoleFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Court/agh/cs/Court/consoleFilter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Court/agh/cs/Court/main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Court/agh/cs/Court/main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Court/agh/cs/Court/orders/orderV.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Court/agh/cs/Court/orders/orderV.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Court/agh/cs/Court/orders/orderVIII.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Court/agh/cs/Court/orders/orderVIII.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/agh/cs/Court/consoleFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/agh/cs/Court/consoleFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/agh/cs/Court/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/agh/cs/Court/main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/agh/cs/Court/orders/orderIV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/agh/cs/Court/orders/orderIV.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/agh/cs/Court/orders/orderIX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/agh/cs/Court/orders/orderIX.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/agh/cs/Court/orders/orderV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/agh/cs/Court/orders/orderV.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/agh/cs/Court/orders/orderVII.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/agh/cs/Court/orders/orderVII.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/agh/cs/Court/orders/orderVIII.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/agh/cs/Court/orders/orderVIII.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/agh/cs/Court/parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/agh/cs/Court/parser.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -29,49 +22,62 @@
     <session id="-1180395513">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="20" />
+          <entry key="project.closed" value="38" />
+          <entry key="project.open.time.10" value="4" />
+          <entry key="project.open.time.11" value="4" />
           <entry key="project.open.time.111" value="1" />
           <entry key="project.open.time.116" value="1" />
           <entry key="project.open.time.118" value="1" />
           <entry key="project.open.time.119" value="1" />
-          <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.12" value="2" />
           <entry key="project.open.time.121" value="1" />
           <entry key="project.open.time.123" value="1" />
           <entry key="project.open.time.124" value="1" />
           <entry key="project.open.time.128" value="1" />
           <entry key="project.open.time.129" value="1" />
+          <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.131" value="1" />
           <entry key="project.open.time.133" value="1" />
           <entry key="project.open.time.137" value="1" />
           <entry key="project.open.time.140" value="1" />
           <entry key="project.open.time.2142" value="1" />
+          <entry key="project.open.time.24" value="1" />
+          <entry key="project.open.time.35" value="1" />
           <entry key="project.open.time.36" value="1" />
-          <entry key="project.open.time.38" value="1" />
+          <entry key="project.open.time.38" value="2" />
           <entry key="project.open.time.40" value="1" />
+          <entry key="project.open.time.42" value="1" />
           <entry key="project.open.time.47" value="1" />
-          <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="22" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.open.time.9" value="5" />
+          <entry key="project.opened" value="40" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="233" />
+          <entry key="MF" value="3" />
+          <entry key="class" value="3" />
+          <entry key="java" value="246" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="233" />
+          <entry key="CLASS" value="3" />
+          <entry key="JAVA" value="246" />
+          <entry key="Manifest" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="MF" value="2" />
           <entry key="dummy" value="50" />
-          <entry key="java" value="25988" />
+          <entry key="java" value="27213" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="25988" />
+          <entry key="JAVA" value="27213" />
+          <entry key="Manifest" value="2" />
           <entry key="PLAIN_TEXT" value="50" />
         </counts>
       </usages-collector>
@@ -82,20 +88,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/agh/cs/Court/main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
-              <caret line="104" column="47" selection-start-line="104" selection-start-column="47" selection-end-line="104" selection-end-column="47" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/agh/cs/Court/consoleFilter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1122">
-              <caret line="99" column="32" selection-start-line="99" selection-start-column="32" selection-end-line="99" selection-end-column="32" />
+            <state relative-caret-position="513">
+              <caret line="38" selection-start-line="38" selection-end-line="38" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -106,8 +100,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/agh/cs/Court/parser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="178" column="17" selection-start-line="178" selection-start-column="17" selection-end-line="178" selection-end-column="17" />
+            <state relative-caret-position="2822">
+              <caret line="187" column="13" selection-start-line="187" selection-start-column="13" selection-end-line="187" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/agh/cs/Court/consoleFilter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1326">
+              <caret line="79" column="32" selection-start-line="79" selection-start-column="32" selection-end-line="79" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -173,13 +179,13 @@
         <option value="$PROJECT_DIR$/src/agh/cs/Court/orders/orderII.java" />
         <option value="$PROJECT_DIR$/src/agh/cs/Court/structures/rubrum.java" />
         <option value="$USER_HOME$/Downloads/TaskStorage.java" />
-        <option value="$PROJECT_DIR$/src/agh/cs/Court/parser.java" />
         <option value="$PROJECT_DIR$/src/agh/cs/Court/orders/orderVIII.java" />
-        <option value="$PROJECT_DIR$/src/agh/cs/Court/consoleFilter.java" />
         <option value="$PROJECT_DIR$/src/agh/cs/Court/orders/orderV.java" />
         <option value="$PROJECT_DIR$/src/agh/cs/Court/orders/orderIV.java" />
         <option value="$PROJECT_DIR$/src/agh/cs/Court/orders/orderVII.java" />
         <option value="$PROJECT_DIR$/src/agh/cs/Court/orders/orderIX.java" />
+        <option value="$PROJECT_DIR$/src/agh/cs/Court/consoleFilter.java" />
+        <option value="$PROJECT_DIR$/src/agh/cs/Court/parser.java" />
         <option value="$PROJECT_DIR$/src/agh/cs/Court/main.java" />
       </list>
     </option>
@@ -204,7 +210,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -228,27 +234,13 @@
               <item name="Court" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Court" type="462c0819:PsiDirectoryNode" />
-              <item name="enums" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Court" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Court" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Court" type="462c0819:PsiDirectoryNode" />
-              <item name="orders" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Court" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Court" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Court" type="462c0819:PsiDirectoryNode" />
               <item name="structures" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -258,14 +250,22 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545494627774" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/jline-3.9.0.jar!/" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545602325845" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/jna-3.0.9.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\barte\IdeaProjects\LabyObiektowe\Court\lib" />
+      <recent name="C:\Users\barte\IdeaProjects\LabyObiektowe\Court\src\agh\cs\Court\structures" />
+      <recent name="C:\Users\barte\IdeaProjects\LabyObiektowe\Court\src" />
+      <recent name="C:\Users\barte\IdeaProjects\LabyObiektowe\Court" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -279,7 +279,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.main">
     <configuration name="main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="agh.cs.Court.main" />
       <module name="Court" />
@@ -293,9 +293,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="jline-3.0.0.M1.jar" type="JarApplication" factoryName="JAR Application" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/lib/jline-3.0.0.M1.jar" />
+      <method v="2" />
+    </configuration>
+    <configuration name="jline-3.9.0.jar" type="JarApplication" factoryName="JAR Application" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/lib/jline-3.9.0.jar" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.main" />
+      <item itemvalue="JAR Application.jline-3.0.0.M1.jar" />
+      <item itemvalue="JAR Application.jline-3.9.0.jar" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.main" />
+        <item itemvalue="JAR Application.jline-3.0.0.M1.jar" />
+        <item itemvalue="JAR Application.jline-3.9.0.jar" />
       </list>
     </recent_temporary>
   </component>
@@ -330,18 +345,35 @@
       <workItem from="1545161738572" duration="104000" />
       <workItem from="1545413300502" duration="11608000" />
       <workItem from="1545431334752" duration="2497000" />
-      <workItem from="1545475610987" duration="16587000" />
+      <workItem from="1545475610987" duration="18193000" />
+      <workItem from="1545496333404" duration="15770000" />
+      <workItem from="1545579292758" duration="2288000" />
+      <workItem from="1545581997360" duration="550000" />
+      <workItem from="1545582581745" duration="465000" />
+      <workItem from="1545583080211" duration="846000" />
+      <workItem from="1545584338929" duration="942000" />
+      <workItem from="1545586966218" duration="219000" />
+      <workItem from="1545587220552" duration="2601000" />
+      <workItem from="1545589913878" duration="270000" />
+      <workItem from="1545590229771" duration="136000" />
+      <workItem from="1545590414139" duration="695000" />
+      <workItem from="1545592880197" duration="738000" />
+      <workItem from="1545593664794" duration="1334000" />
+      <workItem from="1545595036963" duration="685000" />
+      <workItem from="1545595756916" duration="188000" />
+      <workItem from="1545595993361" duration="1194000" />
+      <workItem from="1545600692568" duration="1185000" />
+      <workItem from="1545602120151" duration="204000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="143393000" />
+    <option name="totallyTimeSpent" value="175309000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24563758" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3161074" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -350,13 +382,13 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32907802" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.082269505" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.48510638" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32907802" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32907802" />
@@ -461,25 +493,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/agh/cs/Court/structures/verdict.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="59" column="5" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
-          <folding>
-            <element signature="e#1596#1597#0" expanded="true" />
-            <element signature="e#1630#1631#0" expanded="true" />
-            <element signature="e#1726#1727#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/agh/cs/Court/structures/rubrum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="61" column="55" selection-start-line="61" selection-start-column="55" selection-end-line="61" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Downloads/TaskStorage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="629">
@@ -491,13 +504,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="19" column="45" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.base/java/lang/ProcessBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="1106" selection-start-line="1106" selection-end-line="1106" />
         </state>
       </provider>
     </entry>
@@ -529,16 +535,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/agh/cs/Court/parser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="178" column="17" selection-start-line="178" selection-start-column="17" selection-end-line="178" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/agh/cs/Court/orders/orderVI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -564,6 +560,38 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
           <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/jline-3.9.0.jar!/org/jline/terminal/TerminalBuilder.class" />
+    <entry file="file://$PROJECT_DIR$/src/agh/cs/Court/structures/verdict.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="59" column="5" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/agh/cs/Court/structures/rubrum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="61" column="55" selection-start-line="61" selection-start-column="55" selection-end-line="61" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/jline-3.0.0.M1.jar!/org/jline/terminal/TerminalBuilder.class" />
+    <entry file="jar://$USER_HOME$/.ideaLibSources/jline-3.0.0.M1-sources.jar!/org/jline/terminal/TerminalBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1207">
+          <caret line="100" column="21" selection-start-line="100" selection-start-column="21" selection-end-line="100" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/jline-3.0.0.M1.jar!/META-INF/MANIFEST.MF" />
+    <entry file="jar://$PROJECT_DIR$/lib/jline-3.0.0.M1.jar!/META-INF/MANIFEST.MF" />
+    <entry file="file://$PROJECT_DIR$/src/agh/cs/Court/parser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2822">
+          <caret line="187" column="13" selection-start-line="187" selection-start-column="13" selection-end-line="187" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -572,18 +600,60 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/agh/cs/Court/consoleFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1122">
-          <caret line="99" column="32" selection-start-line="99" selection-start-column="32" selection-end-line="99" selection-end-column="32" />
+        <state relative-caret-position="1326">
+          <caret line="79" column="32" selection-start-line="79" selection-start-column="32" selection-end-line="79" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/jline-3.9.0.jar!/org/jline/terminal/impl/AbstractTerminal.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="205" selection-start-line="205" selection-end-line="205" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ideaLibSources/jline-3.9.0-sources.jar!/org/jline/terminal/impl/AbstractTerminal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="182" column="19" selection-start-line="182" selection-start-column="19" selection-end-line="182" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ideaLibSources/jline-3.9.0-sources.jar!/org/jline/terminal/TerminalBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="403" selection-start-line="403" selection-end-line="403" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.base/java/lang/ProcessImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="419" selection-start-line="419" selection-end-line="419" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.base/java/lang/ProcessBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="1106" selection-start-line="1106" selection-end-line="1106" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/jline-3.9.0.jar!/META-INF/MANIFEST.MF">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="75" column="23" lean-forward="true" selection-start-line="75" selection-start-column="23" selection-end-line="75" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/agh/cs/Court/main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="104" column="47" selection-start-line="104" selection-start-column="47" selection-end-line="104" selection-end-column="47" />
+        <state relative-caret-position="513">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
