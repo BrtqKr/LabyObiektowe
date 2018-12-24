@@ -15,16 +15,15 @@ public class verdict
     private LinkedList<regulation>regulations;
     private String textContent;
 
-    public verdict(rubrum rubrum, LinkedList<String>caseNumbers, String type, LinkedList<regulation>regulations, String textContent, String id, String caseNum)
+    public verdict(rubrum rubrum, /*LinkedList<String>caseNumbers String type,*/ LinkedList<regulation>regulations, String textContent,String caseNum)
     {
         this.rubrum = rubrum;
         this.caseNumbers=new LinkedList<>();
-        this.caseNumbers=caseNumbers;                                   //zapisać wszystko w zmiennych w parserze i zainicjalizować verdict za 1 razem
-        this.type=type;
+        //this.caseNumbers=caseNumbers;
+        //this.type=type;
         this.regulations=new LinkedList<>();
         this.regulations=regulations;
         this.textContent=textContent;
-        this.id=id;
         this.caseNum=caseNum;
     }
     void updateID(String id)

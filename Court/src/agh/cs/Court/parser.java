@@ -15,6 +15,7 @@ import org.jsoup.select.Elements;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.lang.invoke.VarHandle;
 import java.nio.file.DirectoryIteratorException;
 import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
@@ -112,7 +113,7 @@ public class parser {
                 if(this.judges.containsKey(fullName))
                 {
                     agh.cs.Court.structures.judge tmp=this.judges.get(fullName);
-                    tmp.addRole(courtCases.get(0),currentRoles);
+                    tmp.addRole(id,currentRoles);
                     tmp.addCase(caseNo);
                     this.judges.replace(fullName,tmp);
                     currentJudges.add(tmp);
@@ -130,7 +131,7 @@ public class parser {
 
             JSONObject sourceObject = (JSONObject) item.get("source");
             Object codeObject = sourceObject.get("code");
-            String codeString =(String) codeObject;
+            /*String codeString =(String) codeObject;
             Object judgmentUrlObject=sourceObject.get("judgmentUrl");
             String judgementUrl =(String)judgmentUrlObject;
             Object judgmentIdObject=sourceObject.get("judgmentId");
@@ -147,7 +148,7 @@ public class parser {
             while (reportersIterator.hasNext()) {
                 String reporter = (String)reportersIterator.next();
                 reporters.add(reporter);
-            }
+            }*/
             String textContentString=(String)item.get("textContent");
             JSONArray referencedRegulations = (JSONArray) item.get("referencedRegulations");
             Iterator<JSONObject> regulationsIterator = referencedRegulations.iterator();
@@ -167,7 +168,7 @@ public class parser {
             }
             String judgmentDate = (String)item.get("judgmentDate");
             rubrum m = new rubrum(caseNo, judgmentDate, typeString, currentJudges,currentJury);
-            verdict v = new verdict(m, courtCases, judgmentTypeString, regulations,textContentString,id,caseNo);
+            verdict v = new verdict(m,/* courtCases, judgmentTypeString,*/ regulations,textContentString,caseNo);
             verdicts.put(caseNo,v);
     }
 
@@ -196,24 +197,88 @@ public class parser {
             for (Path iter : this.HtmlDirectoryFiles) {
                 Document doc = Jsoup.parse(new File(iter.toString()), "UTF-8");
                 String[] tab=doc.title().split(" - ",2);
-                String caseNo=tab[0];//numer sprawy
-                //System.out.print(caseNo+" ");
+                String caseNo=tab[0];                                                           //numer sprawy
+                String judgmentDate="";
+                String courtType="";
+                LinkedList<judge> currentJudges = new LinkedList<>();
+                LinkedList<String> currentRoles = new LinkedList<>();
+                LinkedList<String> currentJury= new LinkedList<>();
 
+                Elements table=doc.select("tr.niezaznaczona");                          //tabela
+                for(Element x:table)
+                {
+                    String key= x.select("td.lista-label").text();
+                    String value=x.select("td.info-list-value").text();
 
-                Elements tables = doc.select("table.info-list");            //sprawdzić co i jak działa
-                for (Element table : tables) {
-                    Elements trs = table.select("tr");
-                    String[][] trtd = new String[trs.size()][];
-                    for (int i = 0; i < trs.size(); i++) {
-                        Elements tds = trs.get(i).select("td");
-                        trtd[i] = new String[tds.size()];
-                        for (int j = 0; j < tds.size(); j++) {
-                            trtd[i][j] = tds.get(j).text();
-                        }
+/*
+                    if(key.equals("Sąd"))                                                        //typ sądu
+                    {
+                        String[] courtParts=value.split(" ");
+                        courtType=courtParts[0]+" "+courtParts[1]+" "+courtParts[2];
+                        System.out.println(courtType);
                     }
+                    if(key.equals("Data orzeczenia"))                                               //data
+                    {
+                        String[] dateParts=value.split(" ");
+                        judgmentDate=dateParts[0];
+                    }
+                    if(key.equals("Sędziowie"))                                                      //sędziowie
+                    {
+
+                        String judgeString = x.select("td.info-list-value").toString().split("<td class=\"info-list-value\"> ")[1];
+                        for (String j : judgeString.split("<br>")) {
+                            j = j.replaceAll(" </td>", "");
+                            String[] judgeInfo = j.split("/");
+
+                            String name = judgeInfo[0];                                                //imię
+                            if(name.charAt((name.length()-1))==' ')name=name.substring(0,name.length()-1); //usunięcie ewentualnych spacji z końca
+                            currentJury.add(name);
+                            String functionString;
+                            if(judgeInfo.length==2)
+                            {
+                                functionString=judgeInfo[1];
+                                String functionsString=functionString.split("/")[0];                   //funkcje
+                                String[] functions=functionsString.split(" ");
+
+                                for(int i=0;i<functions.length;i++)
+                                {
+                                    currentRoles.add(functions[i]);
+                                }
+                            }
+
+                            if(this.judges.containsKey(name))
+                            {
+                                agh.cs.Court.structures.judge tmp=this.judges.get(name);
+                                tmp.addRole(caseNo,currentRoles);
+                                tmp.addCase(caseNo);
+                                this.judges.replace(name,tmp);
+                                currentJudges.add(tmp);
+                            }
+                            else
+                            {
+                                agh.cs.Court.structures.judge newJudge = new judge(name);
+                                newJudge.addRole(caseNo, currentRoles);
+                                newJudge.addCase(caseNo);
+                                this.judges.put(name,newJudge);
+                                currentJudges.add(newJudge);
+                            }
+
+
+
+                        }
+                    }*/
+                    if(key.equals("Powołane przepisy"))
+                    {
+                        String regulationsString=x.select("td.info-list-value").toString();
+                        System.out.println(regulationsString.split("<td>")[0]);
+                    }
+
                 }
 
 
+                //rubrum m = new rubrum(caseNo, judgmentDate, courtType, currentJudges,currentJury);
+                //verdict v = new verdict(m, /*courtCases, judgmentTypeString,*/ regulations,textContentString,caseNo);
+                //verdicts.put(caseNo,v);
 
             }
 }
