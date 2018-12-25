@@ -29,7 +29,7 @@ public class judge
         StringBuilder result=new StringBuilder();
         for(String role:currentRoles)
         {
-            result.append(role.toString());
+            result.append(role+" ");
         }
         return result.toString();
     }

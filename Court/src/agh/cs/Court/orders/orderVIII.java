@@ -26,16 +26,16 @@ public class orderVIII     // 10 najczęściej przywoływanych ustaw
         }
         List l = new ArrayList<>(this.regulationsStats.values());
         Collections.sort(l);
-
+        LinkedList<String> result=new LinkedList<>();
         for (int i = l.size() - 1; i >l.size() - 11; i--)//iteruje po największych wartościach
         {
             for (String title : regulationsStats.keySet()) //iteruje po tytułach i szuka tytułu największej
             {
 
-                if (regulationsStats.get(title).equals(l.get(i))) {
+                if (regulationsStats.get(title).equals(l.get(i))&&!result.contains(title)) {
 
                     System.out.println((l.size()-i)+")"+title+"...................."+l.get(i));
-
+                    result.add(title);
                 }
 
 

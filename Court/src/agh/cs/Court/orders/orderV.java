@@ -17,16 +17,21 @@ public class orderV {
         }
         List l = new ArrayList<>(this.verdictCounter.values());
         Collections.sort(l);
+        LinkedList<String>result=new LinkedList<>();
         for(int i=l.size()-1;i>l.size()-11;i--)
         {
             for(String judgeKey:keys)
             {
                 if(judges.get(judgeKey).getCasesNumber().equals(l.get(i)))
                 {
-                    System.out.println(judgeKey+", liczba orzeczeń: "+l.get(i));
+                    if(!result.contains(judgeKey))
+                    {
+                        System.out.println(judgeKey+", liczba orzeczeń: "+l.get(i));
+                        result.add(judgeKey);
+                    }
+
                 }
             }
         }
-
     }
 }

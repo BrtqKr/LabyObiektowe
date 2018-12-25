@@ -51,9 +51,6 @@ public class main
             System.out.println();
             while(true) {
                 String command=linereader.readLine(">");
-
-                System.out.println(command);//test
-
                 if (!command.isEmpty()) {
                     consoleFilter c = new consoleFilter(command);
                     if (!c.getOrder().equals("")) {
@@ -62,7 +59,7 @@ public class main
                                 case "Quit":
                                     terminal.close();
                                 case "help":
-                                    System.out.println("Available commands: ");
+                                    System.out.println("Dostępne komendy: ");
                                     System.out.println("Quit - zakończenie pracy programu");
                                     System.out.println("rubrum - wyświetlenie metryki jednego lub wielu orzeczeń, na podstawie sygnatury");
                                     System.out.println("content - wyświetlenie uzasadnienia");
@@ -140,11 +137,15 @@ public class main
                                 case "courts":
                                     orderVII o7 = new orderVII(verdicts);
                                     LinkedHashMap<String, Integer> courtTypeStats = o7.getCourtTypeStats();
-                                    System.out.println("Sądy powszechne, liczba orzeczeń: " + courtTypeStats.get("COMMON"));
+                                    System.out.println("Sądy Powszechne, liczba orzeczeń: " + courtTypeStats.get("COMMON"));
                                     System.out.println("Sąd Najwyższy, liczba orzeczeń: " + courtTypeStats.get("SUPREME"));
-                                    System.out.println("Sądy administracyjne, liczba orzeczeń: " + courtTypeStats.get("ADMINISTRATIVE"));
+                                    int admTotal=courtTypeStats.get("Wojewódzki Sąd Administracyjny")+courtTypeStats.get("Naczelny Sąd Administracyjny");
+                                    System.out.println("Sądy Administracyjne, liczba orzeczeń: " + admTotal+" ,w tym...");
+                                    System.out.println("    Wojewódzkie Sądy Administracyjne, liczba orzeczeń: "+courtTypeStats.get("Wojewódzki Sąd Administracyjny"));
+                                    System.out.println("    Naczelne Sądy Administracyjne, liczba orzeczeń: "+courtTypeStats.get("Naczelny Sąd Administracyjny"));
                                     System.out.println("Trybunał Konstytucyjny, liczba orzeczeń: " + courtTypeStats.get("CONSTITUTIONAL_TRIBUNAL"));
                                     System.out.println("Krajowa Izba Odwoławcza, liczba orzeczeń: " + courtTypeStats.get("NATIONAL_APPEAL_CHAMBER"));
+
                                     break;
                                 case "regulations":
                                     orderVIII o8 = new orderVIII(verdicts);

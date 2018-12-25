@@ -113,7 +113,7 @@ public class parser {
                 if(this.judges.containsKey(fullName))
                 {
                     agh.cs.Court.structures.judge tmp=this.judges.get(fullName);
-                    tmp.addRole(id,currentRoles);
+                    tmp.addRole(caseNo,currentRoles);
                     tmp.addCase(caseNo);
                     this.judges.replace(fullName,tmp);
                     currentJudges.add(tmp);
@@ -191,6 +191,7 @@ public class parser {
             System.out.println(e.getMessage());
         }
     }
+
     public void parseHTMLFiles() throws IOException
     {
 
@@ -217,6 +218,7 @@ public class parser {
                     {
                         String[] courtParts=value.split(" ");
                         courtType=courtParts[0]+" "+courtParts[1]+" "+courtParts[2];
+
                     }
                     if(key.equals("Data orzeczenia"))                                               //data
                     {
@@ -263,9 +265,6 @@ public class parser {
                                 this.judges.put(name,newJudge);
                                 currentJudges.add(newJudge);
                             }
-
-
-
                         }
                     }
                     if(key.equals("Powołane przepisy"))
@@ -294,15 +293,12 @@ public class parser {
                 }
                 ;
                 String textContent = doc.select("span.info-list-value-uzasadnienie").text();
-                System.out.println(textContent);
                 rubrum m = new rubrum(caseNo, judgmentDate, courtType, currentJudges,currentJury);
                 verdict v = new verdict(m, /*courtCases, judgmentTypeString,*/ regulations,textContent,caseNo);
                 verdicts.put(caseNo,v);
 
             }
 }
-
-
     public LinkedHashMap<String, verdict> getVerdicts()
     {
         return this.verdicts;

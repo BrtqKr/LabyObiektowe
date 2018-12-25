@@ -17,6 +17,8 @@ public class orderVII
         this.courtTypeStats.put("ADMINISTRATIVE",0);
         this.courtTypeStats.put("CONSTITUTIONAL_TRIBUNAL",0);
         this.courtTypeStats.put("NATIONAL_APPEAL_CHAMBER",0);
+        this.courtTypeStats.put("Naczelny Sąd Administracyjny",0);
+        this.courtTypeStats.put("Wojewódzki Sąd Administracyjny",0);
         Set<String> keys = verdicts.keySet();
         for (String k : keys)
         {
@@ -24,6 +26,8 @@ public class orderVII
             Integer judgmentNum=this.courtTypeStats.get(r.getCourtType());
             judgmentNum++;
             this.courtTypeStats.put(r.getCourtType(),judgmentNum);
+
+
         }
     }
     public LinkedHashMap<String,Integer> getCourtTypeStats()
