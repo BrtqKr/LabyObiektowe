@@ -8,13 +8,13 @@ public class regulation
     private String journalEntry;
     private String text;
 
-    public regulation(String title, String num, String year, String entry, String text)
+    public regulation(String title)//, String num, String year, String entry, String text)
     {
         this.journalTitle=title;
-        this.journalNo=num;
+        /*this.journalNo=num;
         this.journalYear=year;
         this.journalEntry=entry;
-        this.text=text;
+        this.text=text;*/
     }
     public String getTitle(){return this.journalTitle;}
     public String getText(){return this.text;}

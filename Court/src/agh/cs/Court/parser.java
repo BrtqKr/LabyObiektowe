@@ -163,7 +163,7 @@ public class parser {
                 Long journalEntryLong = (Long)regulation.get("journalEntry");
                 String journalEntry=journalEntryLong.toString();
                 String text =(String) regulation.get("text");
-                agh.cs.Court.structures.regulation r = new regulation(title, journalNo, journalYear, journalEntry, text);
+                agh.cs.Court.structures.regulation r = new regulation(title);//, journalNo, journalYear, journalEntry, text);
                 regulations.add(r);
             }
             String judgmentDate = (String)item.get("judgmentDate");
@@ -203,6 +203,8 @@ public class parser {
                 LinkedList<judge> currentJudges = new LinkedList<>();
                 LinkedList<String> currentRoles = new LinkedList<>();
                 LinkedList<String> currentJury= new LinkedList<>();
+                LinkedList<regulation> regulations=new LinkedList<>();
+
 
                 Elements table=doc.select("tr.niezaznaczona");                          //tabela
                 for(Element x:table)
@@ -210,12 +212,11 @@ public class parser {
                     String key= x.select("td.lista-label").text();
                     String value=x.select("td.info-list-value").text();
 
-/*
+
                     if(key.equals("Sąd"))                                                        //typ sądu
                     {
                         String[] courtParts=value.split(" ");
                         courtType=courtParts[0]+" "+courtParts[1]+" "+courtParts[2];
-                        System.out.println(courtType);
                     }
                     if(key.equals("Data orzeczenia"))                                               //data
                     {
@@ -266,19 +267,37 @@ public class parser {
 
 
                         }
-                    }*/
+                    }
                     if(key.equals("Powołane przepisy"))
                     {
-                        String regulationsString=x.select("td.info-list-value").toString();
-                        System.out.println(regulationsString.split("<td>")[0]);
+
+                        x.select("a").remove();
+                         String[] regs=x.select("td.info-list-value").toString().split("<br>");
+                         for(int i=0;i<regs.length;i++)
+                         {
+                             regs[i]=regs[i].replace("<span class=\"nakt\">","").replace("</span>","").replace("</td>","");
+                             for(int j=0;j<regs[i].length()-1;j++)
+                             {
+                                 if(regs[i].charAt(j)!=' ')
+                                 {
+                                     regs[i]=regs[i].substring(j);
+                                     break;
+                                 }
+                             }
+                             if(i%2==1)
+                             {
+                                 regulation r=new regulation(regs[i]);
+                                 regulations.add(r);
+                             }
+                         }
                     }
-
                 }
-
-
-                //rubrum m = new rubrum(caseNo, judgmentDate, courtType, currentJudges,currentJury);
-                //verdict v = new verdict(m, /*courtCases, judgmentTypeString,*/ regulations,textContentString,caseNo);
-                //verdicts.put(caseNo,v);
+                ;
+                String textContent = doc.select("span.info-list-value-uzasadnienie").text();
+                System.out.println(textContent);
+                rubrum m = new rubrum(caseNo, judgmentDate, courtType, currentJudges,currentJury);
+                verdict v = new verdict(m, /*courtCases, judgmentTypeString,*/ regulations,textContent,caseNo);
+                verdicts.put(caseNo,v);
 
             }
 }
