@@ -6,7 +6,8 @@ import java.util.*;
 
 public class orderV {
     private LinkedHashMap<String,Integer>verdictCounter;
-    public orderV(LinkedHashMap<String, judge> judges) //10 sędziów z największą liczbą orzeczeń
+    private String ranking;
+    public orderV(LinkedHashMap<String, judge> judges) //10 sędziów z największą liczbą orzeczeń z uwzględnieniem powtórek wartości
     {
         Set<String> keys = judges.keySet();
         this.verdictCounter=new LinkedHashMap<>();
@@ -18,6 +19,7 @@ public class orderV {
         List l = new ArrayList<>(this.verdictCounter.values());
         Collections.sort(l);
         LinkedList<String>result=new LinkedList<>();
+        StringBuilder s=new StringBuilder();
         for(int i=l.size()-1;i>l.size()-11;i--)
         {
             for(String judgeKey:keys)
@@ -26,12 +28,17 @@ public class orderV {
                 {
                     if(!result.contains(judgeKey))
                     {
-                        System.out.println(judgeKey+", liczba orzeczeń: "+l.get(i));
+                        s.append(judgeKey+", liczba orzeczeń: "+l.get(i)+System.lineSeparator());
                         result.add(judgeKey);
                     }
 
                 }
             }
         }
+        this.ranking=s.toString();
+    }
+
+    public String getRanking() {
+        return ranking;
     }
 }

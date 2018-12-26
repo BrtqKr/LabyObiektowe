@@ -10,7 +10,7 @@ import org.jsoup.select.Elements;
 
 public class orderIII
 {
-
+    private String textContent;
     public orderIII(LinkedHashMap<String, verdict> verdicts, String signature)  //wyświetla uzasadnienie
     {
         verdict tmp=verdicts.get(signature);
@@ -21,10 +21,16 @@ public class orderIII
     {
         Document doc=Jsoup.parse(file);
         Elements elements=doc.body().select("*");
+        StringBuilder s=new StringBuilder();
         for (Element iter: elements)
         {
-            System.out.println(iter.ownText());
+            s.append(iter.ownText()+System.lineSeparator());
         }
+        this.textContent=s.toString();
+    }
+    public String getTextContent()
+    {
+        return this.textContent;
     }
 
 }

@@ -30,9 +30,18 @@ public class orderVII
 
         }
     }
-    public LinkedHashMap<String,Integer> getCourtTypeStats()
+    public String getCourtTypeStats()
     {
-        return this.courtTypeStats;
+        StringBuilder s=new StringBuilder();
+        s.append("Sądy Powszechne, liczba orzeczeń: " + this.courtTypeStats.get("COMMON")+System.lineSeparator());
+        s.append("Sąd Najwyższy, liczba orzeczeń: " + this.courtTypeStats.get("SUPREME")+System.lineSeparator());
+        int admTotal=this.courtTypeStats.get("Wojewódzki Sąd Administracyjny")+this.courtTypeStats.get("Naczelny Sąd Administracyjny");
+        s.append("Sądy Administracyjne, liczba orzeczeń: " + admTotal+" ,w tym..."+System.lineSeparator());
+        s.append("    Wojewódzkie Sądy Administracyjne, liczba orzeczeń: "+this.courtTypeStats.get("Wojewódzki Sąd Administracyjny")+System.lineSeparator());
+        s.append("    Naczelne Sądy Administracyjne, liczba orzeczeń: "+this.courtTypeStats.get("Naczelny Sąd Administracyjny")+System.lineSeparator());
+        s.append("Trybunał Konstytucyjny, liczba orzeczeń: " + this.courtTypeStats.get("CONSTITUTIONAL_TRIBUNAL")+System.lineSeparator());
+        s.append("Krajowa Izba Odwoławcza, liczba orzeczeń: " + this.courtTypeStats.get("NATIONAL_APPEAL_CHAMBER")+System.lineSeparator());
+        return s.toString();
     }
 }
 

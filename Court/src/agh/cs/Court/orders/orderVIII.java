@@ -7,6 +7,7 @@ import java.util.*;
 
 public class orderVIII     // 10 najczęściej przywoływanych ustaw
 {
+    private String regs;
     private LinkedHashMap<String, Integer> regulationsStats;   //tytuł, liczba
     public orderVIII(LinkedHashMap<String, verdict> verdicts) {
         this.regulationsStats = new LinkedHashMap<>();
@@ -27,6 +28,7 @@ public class orderVIII     // 10 najczęściej przywoływanych ustaw
         List l = new ArrayList<>(this.regulationsStats.values());
         Collections.sort(l);
         LinkedList<String> result=new LinkedList<>();
+        StringBuilder s=new StringBuilder();
         for (int i = l.size() - 1; i >l.size() - 11; i--)//iteruje po największych wartościach
         {
             for (String title : regulationsStats.keySet()) //iteruje po tytułach i szuka tytułu największej
@@ -34,12 +36,17 @@ public class orderVIII     // 10 najczęściej przywoływanych ustaw
 
                 if (regulationsStats.get(title).equals(l.get(i))&&!result.contains(title)) {
 
-                    System.out.println((l.size()-i)+")"+title+"...................."+l.get(i));
+                    s.append((l.size()-i)+")"+title+"...................."+l.get(i)+System.lineSeparator());
                     result.add(title);
                 }
 
 
             }
         }
+        this.regs=s.toString();
+    }
+
+    public String getRegs() {
+        return regs;
     }
 }

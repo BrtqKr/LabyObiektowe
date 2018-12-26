@@ -4,6 +4,7 @@ import agh.cs.Court.structures.judge;
 import agh.cs.Court.structures.regulation;
 import agh.cs.Court.structures.rubrum;
 import agh.cs.Court.structures.verdict;
+import org.apache.commons.io.FilenameUtils;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -81,8 +82,8 @@ public class parser {
     }
     public void parseElements(JSONObject item)
     {
-            Long idLong = (Long)item.get("id");
-            String id=idLong.toString();
+            //Long idLong = (Long)item.get("id");
+            //String id=idLong.toString();
             String typeString = (String)item.get("courtType");
             JSONArray jCases = (JSONArray) item.get("courtCases");
             String caseNo;
@@ -94,7 +95,7 @@ public class parser {
                 courtCases.add(caseNumString);
             }
             caseNo=courtCases.get(0);
-            String judgmentTypeString = (String)item.get("JudgmentType");
+            //String judgmentTypeString = (String)item.get("JudgmentType");
             JSONArray judges = (JSONArray) item.get("judges");
             Iterator<JSONObject> judgesIterator = judges.iterator();
             LinkedList<judge> currentJudges = new LinkedList<>();
@@ -177,7 +178,7 @@ public class parser {
 
         try (DirectoryStream<Path> stream = Files.newDirectoryStream(htmlDir)) {   //dodać coś żeby parsowało tylko html
             for (Path entry : stream) {
-                if(!Files.isDirectory(entry))
+                if(!Files.isDirectory(entry)&& FilenameUtils.getExtension(entry.toString()).equals("html"))
                 {
                     this.HtmlDirectoryFiles.add(entry);
                 }

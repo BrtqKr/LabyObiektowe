@@ -35,19 +35,22 @@ public class rubrum
         this.courtType=type;
     }
 
-    public void printRubrum()
+    public String getRubrum()
     {
-        System.out.println("Sygnatura orzeczenia: "+this.caseNumber);
-        System.out.println("Data wydania orzeczenia: "+this.judgmentDate);
-        System.out.println("Typ sądu: "+ this.courtType);                     //zakładam że zamieniam court type przed przekazaniem na stringa
+        StringBuilder s=new StringBuilder();
 
-        System.out.println("Skład orzekający: ");
+        s.append("Sygnatura orzeczenia: "+this.caseNumber+System.lineSeparator());
+        s.append("Data wydania orzeczenia: "+this.judgmentDate+System.lineSeparator());
+        s.append("Typ sądu: "+ this.courtType+System.lineSeparator());                                         //zakładam że zamieniam court type przed przekazaniem na stringa
+
+        s.append("Skład orzekający: "+System.lineSeparator());
         for(judge judgeIter:judges)
         {
-            System.out.print("Sędzia: "+judgeIter.getName()+", Role w postępowaniu: ");
-            if(judgeIter.getRoles(this.caseNumber).isEmpty())System.out.println("brak ról");
-            else System.out.println(judgeIter.getRoles(this.caseNumber));
+            s.append("Sędzia: "+judgeIter.getName()+", Role w postępowaniu: ");
+            if(judgeIter.getRoles(this.caseNumber).isEmpty())s.append("brak ról"+System.lineSeparator());
+            else s.append(judgeIter.getRoles(this.caseNumber)+System.lineSeparator());
         }
+        return s.toString();
     }
 
     public String getDate()

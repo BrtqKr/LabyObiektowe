@@ -10,14 +10,14 @@ import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.Set;
 
-public class orderVI
-{
+public class orderVI {
     private int[] stats;
+
     public orderVI(LinkedHashMap<String, verdict> verdicts) throws IllegalArgumentException //wyświetla liczbę orzeczeń w zadanych miesiącach
     {
-        this.stats=new int[13];
+        this.stats = new int[13];
 
-        int[] months=new int[13];
+        int[] months = new int[13];
 
         Set<String> keys = verdicts.keySet();
         for (String k : keys) {
@@ -67,8 +67,50 @@ public class orderVI
             this.stats = months;
         }
     }
-    public int[] getStats()
-    {
-        return this.stats;
+
+    public String getStats() {
+        StringBuilder s = new StringBuilder();
+        for (int i = 1; i < this.stats.length; i++) {
+            switch (i) {
+                case 1:
+                    s.append("Styczeń, ");
+                    break;
+                case 2:
+                    s.append("Luty, ");
+                    break;
+                case 3:
+                    s.append("Marzec, ");
+                    break;
+                case 4:
+                    s.append("Kwiecień, ");
+                    break;
+                case 5:
+                    s.append("Maj, ");
+                    break;
+                case 6:
+                    s.append("Czerwiec, ");
+                    break;
+                case 7:
+                    s.append("Lipiec, ");
+                    break;
+                case 8:
+                    s.append("Sierpień, ");
+                    break;
+                case 9:
+                    s.append("Wrzesień, ");
+                    break;
+                case 10:
+                    s.append("Październik, ");
+                    break;
+                case 11:
+                    s.append("Listopad, ");
+                    break;
+                case 12:
+                    s.append("Grudzień, ");
+                    break;
+            }
+            s.append("liczba orzeczeń: " + this.stats[i]+System.lineSeparator());
+        }
+        return s.toString();
     }
 }

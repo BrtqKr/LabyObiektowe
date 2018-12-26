@@ -23,8 +23,13 @@ public class orderIX
        }
        this.total=counter;
     }
-    public int[] getTotal()
+    public String getRanking()
     {
-        return this.total;
+        StringBuilder s=new StringBuilder();
+        for (int i = 1; i < 16; i++) {
+            if (i == 1) s.append(i + " sędzia: " + this.total[i]+System.lineSeparator());
+            else s.append(i + " sędziów: " + this.total[i]+System.lineSeparator());
+        }
+        return s.toString();
     }
 }
