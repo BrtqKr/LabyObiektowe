@@ -8,9 +8,9 @@ public enum JudgeRole
     {
         switch (role)
         {
-            case PRESIDING_JUDGE:return "PRESIDING_JUDGE";
-            case REPORTING_JUDGE:return "REPORTING_JUDGE";
-            case REASONS_FOR_JUDGMENT_AUTHOR:return "REASONS_FOR_JUDGMENT_AUTHOR";
+            case PRESIDING_JUDGE:return "przewodniczący";
+            case REPORTING_JUDGE:return "sprawozdawca";
+            case REASONS_FOR_JUDGMENT_AUTHOR:return "autor uzasadnienia";
             default:throw new IllegalArgumentException ("Illegal role");
         }
     }

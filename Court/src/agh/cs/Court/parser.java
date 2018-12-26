@@ -1,5 +1,6 @@
 package agh.cs.Court;
 
+import agh.cs.Court.enums.JudgeRole;
 import agh.cs.Court.structures.judge;
 import agh.cs.Court.structures.regulation;
 import agh.cs.Court.structures.rubrum;
@@ -82,9 +83,23 @@ public class parser {
     }
     public void parseElements(JSONObject item)
     {
-            //Long idLong = (Long)item.get("id");
-            //String id=idLong.toString();
             String typeString = (String)item.get("courtType");
+            String courtType;
+            switch (typeString)
+            {
+                case "COMMON":courtType="Sąd Powszechny";
+                break;
+                case "SUPREME":courtType="Sąd Najwyższy";
+                break;
+                case "ADMINISTRATIVE":courtType="Sąd Administracyjny";
+                break;
+                case "CONSTITUTIONAL_TRIBUNAL":courtType="Trybunał Konstytucyjny";
+                break;
+                case "NATIONAL_APPEAL_CHAMBER":courtType="Krajowa Izba Odwoławcza";
+                break;
+                default:throw new IllegalArgumentException("Illegal court type");
+            }
+
             JSONArray jCases = (JSONArray) item.get("courtCases");
             String caseNo;
             LinkedList<String> courtCases = new LinkedList<>();
@@ -95,7 +110,6 @@ public class parser {
                 courtCases.add(caseNumString);
             }
             caseNo=courtCases.get(0);
-            //String judgmentTypeString = (String)item.get("JudgmentType");
             JSONArray judges = (JSONArray) item.get("judges");
             Iterator<JSONObject> judgesIterator = judges.iterator();
             LinkedList<judge> currentJudges = new LinkedList<>();
@@ -109,7 +123,18 @@ public class parser {
                 Iterator<String> rolesIterator = roles.iterator();
                 while (rolesIterator.hasNext()) {
                     String roleString = rolesIterator.next();
-                    currentRoles.add(roleString);
+                    String judgeRole;
+                    switch (roleString)
+                    {
+                        case "PRESIDING_JUDGE":judgeRole="przewodniczący";
+                        break;
+                        case "REPORTING_JUDGE":judgeRole="sprawozdawca";
+                        break;
+                        case "REASONS_FOR_JUDGMENT_AUTHOR":judgeRole="autor uzasadnienia";
+                        break;
+                        default:throw new IllegalArgumentException ("Illegal role");
+                    }
+                    currentRoles.add(judgeRole);
                 }
                 if(this.judges.containsKey(fullName))
                 {
@@ -129,27 +154,6 @@ public class parser {
                 }
 
             }
-
-            JSONObject sourceObject = (JSONObject) item.get("source");
-            Object codeObject = sourceObject.get("code");
-            /*String codeString =(String) codeObject;
-            Object judgmentUrlObject=sourceObject.get("judgmentUrl");
-            String judgementUrl =(String)judgmentUrlObject;
-            Object judgmentIdObject=sourceObject.get("judgmentId");
-            String judgmentId =(String)judgmentIdObject;
-            Object publisherObject=sourceObject.get("publisher");
-            String publisher = (String) publisherObject;
-            Object reviserObject=sourceObject.get("reviser");
-            String reviser = (String) reviserObject;
-            Object publicationDateObject=sourceObject.get("publicationDate");
-            String publicationDate = (String)publicationDateObject;
-            JSONArray courtReportersArray = (JSONArray) item.get("courtReporters");
-            Iterator<Object> reportersIterator = courtReportersArray.iterator();
-            LinkedList<String>reporters=new LinkedList<>();
-            while (reportersIterator.hasNext()) {
-                String reporter = (String)reportersIterator.next();
-                reporters.add(reporter);
-            }*/
             String textContentString=(String)item.get("textContent");
             JSONArray referencedRegulations = (JSONArray) item.get("referencedRegulations");
             Iterator<JSONObject> regulationsIterator = referencedRegulations.iterator();
@@ -157,18 +161,11 @@ public class parser {
             while (regulationsIterator.hasNext()) {
                 JSONObject regulation = regulationsIterator.next();
                 String title = (String)regulation.get("journalTitle");
-                Long journalNoLong = (Long)regulation.get("journalNo");
-                String journalNo=journalNoLong.toString();
-                Long journalYearLong = (Long)regulation.get("journalYear");
-                String journalYear=journalYearLong.toString();
-                Long journalEntryLong = (Long)regulation.get("journalEntry");
-                String journalEntry=journalEntryLong.toString();
-                String text =(String) regulation.get("text");
                 agh.cs.Court.structures.regulation r = new regulation(title);//, journalNo, journalYear, journalEntry, text);
                 regulations.add(r);
             }
             String judgmentDate = (String)item.get("judgmentDate");
-            rubrum m = new rubrum(caseNo, judgmentDate, typeString, currentJudges,currentJury);
+            rubrum m = new rubrum(caseNo, judgmentDate, courtType, currentJudges,currentJury);
             verdict v = new verdict(m,/* courtCases, judgmentTypeString,*/ regulations,textContentString,caseNo);
             verdicts.put(caseNo,v);
     }
@@ -307,10 +304,6 @@ public class parser {
     public LinkedHashMap<String, judge> getJudges()
     {
         return this.judges;
-    }
-
-    public List<Path> getHtmlDirectoryFiles() {
-        return HtmlDirectoryFiles;
     }
 }
 

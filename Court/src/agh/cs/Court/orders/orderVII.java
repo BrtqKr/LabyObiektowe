@@ -12,11 +12,11 @@ public class orderVII
     public orderVII(LinkedHashMap<String, verdict>verdicts) //rozkład statystyczny liczby orzeczeń na typ sądu
     {
         this.courtTypeStats=new LinkedHashMap<>();
-        this.courtTypeStats.put("COMMON",0);
-        this.courtTypeStats.put("SUPREME",0);
-        this.courtTypeStats.put("ADMINISTRATIVE",0);
-        this.courtTypeStats.put("CONSTITUTIONAL_TRIBUNAL",0);
-        this.courtTypeStats.put("NATIONAL_APPEAL_CHAMBER",0);
+        this.courtTypeStats.put("Sąd Powszechny",0);
+        this.courtTypeStats.put("Sąd Najwyższy",0);
+        this.courtTypeStats.put("Sąd Administracyjny",0);
+        this.courtTypeStats.put("Trybunał Konstytucyjny",0);
+        this.courtTypeStats.put("Krajowa Izba Odwoławcza",0);
         this.courtTypeStats.put("Naczelny Sąd Administracyjny",0);
         this.courtTypeStats.put("Wojewódzki Sąd Administracyjny",0);
         Set<String> keys = verdicts.keySet();
@@ -33,14 +33,14 @@ public class orderVII
     public String getCourtTypeStats()
     {
         StringBuilder s=new StringBuilder();
-        s.append("Sądy Powszechne, liczba orzeczeń: " + this.courtTypeStats.get("COMMON")+System.lineSeparator());
-        s.append("Sąd Najwyższy, liczba orzeczeń: " + this.courtTypeStats.get("SUPREME")+System.lineSeparator());
+        s.append("Sądy Powszechne, liczba orzeczeń: " + this.courtTypeStats.get("Sąd Powszechny")+System.lineSeparator());
+        s.append("Sąd Najwyższy, liczba orzeczeń: " + this.courtTypeStats.get("Sąd Najwyższy")+System.lineSeparator());
         int admTotal=this.courtTypeStats.get("Wojewódzki Sąd Administracyjny")+this.courtTypeStats.get("Naczelny Sąd Administracyjny");
         s.append("Sądy Administracyjne, liczba orzeczeń: " + admTotal+" ,w tym..."+System.lineSeparator());
         s.append("    Wojewódzkie Sądy Administracyjne, liczba orzeczeń: "+this.courtTypeStats.get("Wojewódzki Sąd Administracyjny")+System.lineSeparator());
         s.append("    Naczelne Sądy Administracyjne, liczba orzeczeń: "+this.courtTypeStats.get("Naczelny Sąd Administracyjny")+System.lineSeparator());
-        s.append("Trybunał Konstytucyjny, liczba orzeczeń: " + this.courtTypeStats.get("CONSTITUTIONAL_TRIBUNAL")+System.lineSeparator());
-        s.append("Krajowa Izba Odwoławcza, liczba orzeczeń: " + this.courtTypeStats.get("NATIONAL_APPEAL_CHAMBER")+System.lineSeparator());
+        s.append("Trybunał Konstytucyjny, liczba orzeczeń: " + this.courtTypeStats.get("Trybunał Konstytucyjny")+System.lineSeparator());
+        s.append("Krajowa Izba Odwoławcza, liczba orzeczeń: " + this.courtTypeStats.get("Krajowa Izba Odwoławcza")+System.lineSeparator());
         return s.toString();
     }
 }

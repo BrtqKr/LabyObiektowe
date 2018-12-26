@@ -33,11 +33,8 @@ public class main
 
         try
         {
-            /*Path dir=Paths.get("C:/Users/barte/OneDrive/Pulpit/jsonVerdicts");
-            //C:/Users/barte/OneDrive/Pulpit/htmlVerdicts
-            o2.execute("II AKa 105/11");
-*/
-
+            /*Path dir=Paths.get("C:/Users/barte/OneDrive/Pulpit/Verdicts");        //dane testowe
+            o2.execute("II AKa 105/11");*/
             Terminal terminal = TerminalBuilder
                     .builder()
                     .encoding("UTF-8")
@@ -45,15 +42,15 @@ public class main
                     .build();
 
             LineReader linereader = LineReaderBuilder.builder().terminal(terminal).build();
-            String pathString=linereader.readLine("Podaj ścieżkę do folderu z plikami i opcjonalnie ścieżkę do pliku zapisu historii");
-            String[] paths=pathString.split(" ");
+            //String pathString=linereader.readLine("Podaj ścieżkę do folderu z plikami i opcjonalnie ścieżkę do pliku zapisu historii");    //tester na konsolę intellij
+            //String[] paths=pathString.split(" ");
             boolean optionalFlag=false;
-            Path dir=Paths.get(paths[0]);
-            Path history=Paths.get(paths[0]);
-            if(paths.length>=2)
+            Path dir=Paths.get(args[0]);
+            Path history=Paths.get(args[0]);
+            if(args.length>=2)
             {
                 optionalFlag=true;
-                history=Paths.get(paths[1]);
+                history=Paths.get(args[1]);
             }
             parser parser=new parser(dir,dir);
             LinkedHashMap<String, verdict> verdicts=parser.getVerdicts();

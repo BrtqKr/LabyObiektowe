@@ -41,8 +41,7 @@ public class rubrum
 
         s.append("Sygnatura orzeczenia: "+this.caseNumber+System.lineSeparator());
         s.append("Data wydania orzeczenia: "+this.judgmentDate+System.lineSeparator());
-        s.append("Typ sądu: "+ this.courtType+System.lineSeparator());                                         //zakładam że zamieniam court type przed przekazaniem na stringa
-
+        s.append("Typ sądu: "+ this.courtType+System.lineSeparator());
         s.append("Skład orzekający: "+System.lineSeparator());
         for(judge judgeIter:judges)
         {
