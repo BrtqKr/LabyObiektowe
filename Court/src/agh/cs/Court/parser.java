@@ -1,6 +1,5 @@
 package agh.cs.Court;
 
-import agh.cs.Court.enums.JudgeRole;
 import agh.cs.Court.structures.judge;
 import agh.cs.Court.structures.regulation;
 import agh.cs.Court.structures.rubrum;
@@ -17,14 +16,11 @@ import org.jsoup.select.Elements;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.lang.invoke.VarHandle;
 import java.nio.file.DirectoryIteratorException;
 import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.*;
-
-import static java.nio.file.Files.probeContentType;
 
 public class parser {
     private LinkedHashMap<String, verdict> verdicts;
@@ -268,7 +264,7 @@ public class parser {
                     if(key.equals("Powołane przepisy"))
                     {
 
-                        x.select("a").remove();
+                         x.select("a").remove();
                          String[] regs=x.select("td.info-list-value").toString().split("<br>");
                          for(int i=0;i<regs.length;i++)
                          {
@@ -289,7 +285,7 @@ public class parser {
                          }
                     }
                 }
-                ;
+
                 String textContent = doc.select("span.info-list-value-uzasadnienie").text();
                 rubrum m = new rubrum(caseNo, judgmentDate, courtType, currentJudges,currentJury);
                 verdict v = new verdict(m, /*courtCases, judgmentTypeString,*/ regulations,textContent,caseNo);
